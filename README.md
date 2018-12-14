@@ -4,7 +4,7 @@ A package for analyzing and quantifying the flexibility of complex systems.
 
 | **Documentation**                                                               | **Build Status**                                                                                |
 |:-------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
-| [![][docs-stable-img]][docs-stable-url] | [[![Build Status](https://travis-ci.org/pulsipher/FlexJuMP.jl.svg?branch=master)](https://travis-ci.org/pulsipher/FlexJuMP.jl) [![][appveyor-img]][appveyor-url] [![Coverage Status](https://coveralls.io/repos/pulsipher/FlexJuMP.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulsipher/FlexJuMP.jl?branch=master) [![codecov.io](http://codecov.io/github/pulsipher/FlexJuMP.jl/coverage.svg?branch=master)](http://codecov.io/github/pulsipher/FlexJuMP.jl?branch=master) |
+| Docs | [[![Build Status](https://travis-ci.org/pulsipher/FlexJuMP.jl.svg?branch=master)](https://travis-ci.org/pulsipher/FlexJuMP.jl) [[![Build Status2](https://ci.appveyor.com/api/projects/status/github/pulsipher/FlexJuMP.jl?branch=master&svg=true)](https://ci.appveyor.com/project/pulsipher/FlexJuMP-jl) [![Coverage Status](https://coveralls.io/repos/pulsipher/FlexJuMP.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/pulsipher/FlexJuMP.jl?branch=master) [![codecov.io](http://codecov.io/github/pulsipher/FlexJuMP.jl/coverage.svg?branch=master)](http://codecov.io/github/pulsipher/FlexJuMP.jl?branch=master) |
 
 Comments, suggestions and improvements are welcome and appreciated.
 
@@ -26,7 +26,7 @@ an API library.
 
 ## Project Status
 
-The package is tested against Julia `0.6` and the nightly builds of the Julia `master` branch on Linux, macOS, and Windows.
+The package is tested against Julia `0.6` on Linux, macOS, and Windows.
 
 There is not yet support for Julia `0.7` or `1.0`.
 
