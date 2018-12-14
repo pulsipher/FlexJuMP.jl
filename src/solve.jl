@@ -1,7 +1,7 @@
 import MathProgBase
 
 """
-    solvehook(m::Model; [suppress_warnings::Bool = false, U::Union{Int, Float64} = 10000, diag::Bool = false, active_constr::Bool = false, real_recourse_dim::Int = -1, conic_δ::Bool = false, inactives::Vector = []])
+    solvehook(m::Model; [suppress_warnings::Bool = false, U::Number = 10000, diag::Bool = false, active_constr::Bool = false, real_recourse_dim::Int = -1, conic_δ::Bool = false, inactives::Vector = []])
 Returns the solution status to solving the flexibility model `m`. This solvehook what `JuMP.solve(::Model)` for flexibility models.
 This solves the flexibility index problem using the variables and constraints specified in `m`.
 
@@ -10,14 +10,14 @@ This solves the flexibility index problem using the variables and constraints sp
 
 **Keyword Arguments**
 - `suppress_warnings::Bool = false` Indicates if solver warnings should be suppressed.
-- `U::Union{Int, Float64} = 10000` The slack variable upper bound.
+- `U::Number = 10000` The slack variable upper bound.
 - `diag::Bool = false` Indicates if the ellipsoidal uncertainty set is diagonalized (this is only active when an ellipsoidal set is used).
 - `active_constr::Bool = false` Indicates if the optional active constraint should be used which enforces how many inequalities are active at the solution, this must be set to `true` for systems without control variables and/or contain state variables.
 - `real_recourse_dim::Int = -1` The actual number of recourse variables in case state variables are included as recourse variables. This is mandatory if `active_constr = true` and no state variables are provided.
 - `conic_δ::Bool = false` This should be set to `true` if a conic solver is used such as Pajarito.jl.
 - `inactives::Vector = []` The indexes of inequality constraints that should be turned off.
 """
-function solvehook(m::Model; suppress_warnings::Bool = false, U::Union{Int, Float64} = 10000, diag::Bool = false, active_constr::Bool = false,
+function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000, diag::Bool = false, active_constr::Bool = false,
                    real_recourse_dim::Int = -1, conic_δ::Bool = false, inactives::Vector = [])
 
     # Pull in the constraint data from the JuMP model

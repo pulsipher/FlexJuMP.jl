@@ -44,4 +44,4 @@ build_script:
       Pkg.clone(pwd(), \"FlexJuMP\"); Pkg.build(\"FlexJuMP\")"
 
 test_script:
-  - C:\projects\julia\bin\julia --check-bounds=yes -e "Pkg.test(\"PkgName\")"
+  - C:\projects\julia\bin\julia --check-bounds=yes -e "Pkg.test(\"FlexJuMP\")"

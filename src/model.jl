@@ -148,13 +148,13 @@ function setcovariance(m::Model, covariance::Matrix)
 end
 
 """
-    setmean(m::Model, mean::Union{Vector{Float64}, Vector{Int}})
+    setmean(m::Model, mean::Vector)
 Specify the mean corresponding to `FlexibilityData.RVmeans` stored in the flexibility model `m`. This method verifies that
 the length of the input `mean` matches the length of `FlexibilityData.RVmeans` before overwriting the current mean.
 
 **Arguments**
 - `m::Model` The flexibility model.
-- `mean::Union{Vector{Float64}, Vector{Int}}` The means of the random variables.
+- `mean::Vector` The means of the random variables.
 
 ```julia
 setmean(m, [2.3; 5])
@@ -163,7 +163,7 @@ setmean(m, [2.3; 5])
  5.0
 ```
 """
-function setmean(m::Model, mean::Union{Vector{Float64}, Vector{Int}})
+function setmean(m::Model, mean::Vector)
     flex_data = getflexibilitydata(m)
     if length(flex_data.RVmeans) == length(mean)
         flex_data.RVmeans = mean

@@ -42,8 +42,8 @@ function setuncertaintyset(m::Model, uncertainty_set::Symbol, attribute = nothin
     if uncertainty_set == :Ellipsoid
         if isa(attribute, Void) && length(flex_data.covariance) == 0
             error("Ellipsoidal set requires a covariance matrix, but one is not provided.")
-        elseif !isa(attribute, Union{Matrix{Float64}, Matrix{Int}}) && !isa(attribute, Void)
-            error("Expected ellipsoidal attribute to be covariance matrix of type Matrix{Number}, but got attribute of type $attr_type.")
+        elseif !isa(attribute, Matrix) && !isa(attribute, Void)
+            error("Expected ellipsoidal attribute to be covariance matrix of type Matrix, but got attribute of type $attr_type.")
         end
         flex_data.uncertainty_set = EllipsoidalSet()
         if !isa(attribute, Void)
@@ -53,7 +53,7 @@ function setuncertaintyset(m::Model, uncertainty_set::Symbol, attribute = nothin
 
     # Setup hyperbox set if specified and run checks
     elseif uncertainty_set == :Hyperbox
-        if !isa(attribute, Union{Vector{Vector{Float64}}, Vector{Vector{Int}}})
+        if !isa(attribute, Union{Vector{Vector{Float64}}, Vector{Vector{Float32}}, Vector{Vector{Int}}})
             error("Expected hyperbox attribute to be deviations of form [[neg_dev]; [pos_dev]], but got attribute of type $attr_type.")
         elseif length(attribute[1]) != length(attribute[2])
             error("The dimensions of pos_dev and neg_dev do not match.")
