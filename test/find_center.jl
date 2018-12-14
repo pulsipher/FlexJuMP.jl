@@ -3,7 +3,7 @@
 @test all(getmean(m) .== means)
 
 # Try different centers and changing the mean
-@test !all(findcenteredmean(m, center = :analytic) .>= 0)
+@test isa(findcenteredmean(m, center = :analytic), Vector)
 @test all(findcenteredmean(m, center = :analytic, only_positive = true, update_mean = true) .>= 0)
 @test !all(getmean(m) .== means)
 
