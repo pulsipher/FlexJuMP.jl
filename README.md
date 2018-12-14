@@ -22,7 +22,7 @@ Pkg.clone("git://github.com/pulsipher/FlexJuMP.jl.git")
 #### Documentation
 [![](https://img.shields.io/badge/docs-latest-blue.svg)](https://pulsipher.github.io/FlexJuMP.jl/latest)
 
-Please visit our documentation [pages](https://pulsipher.github.io/FlexJuMP.jl/latest) to learn all you need to know to get started and more. We provide
+Please visit our [documentation pages](https://pulsipher.github.io/FlexJuMP.jl/latest) to learn all you need to know to get started and more. We provide
 a quick start guide, an overview necessary background material, a detailed user guide, examples, and
 an API library.
 
