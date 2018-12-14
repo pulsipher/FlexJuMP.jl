@@ -17,6 +17,11 @@ branches:
     - master
     - /release-.*/
 
+skip_commits:
+  files:
+    - docs/*.md
+    - *.md
+
 notifications:
   - provider: Email
     on_build_success: false
