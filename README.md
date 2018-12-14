@@ -8,10 +8,10 @@ A JuMP extension for analyzing and quantifying the flexibility of complex system
 
 Comments, suggestions and improvements are welcome and appreciated.
 
-#### License
+## License
 `FlexJuMP` is licensed under the [MIT "Expat" license](./LICENSE.md).
 
-#### Installation
+## Installation
 FlexJuMP.jl is not yet a registered Julia package, but can still be installed by providing the package manager
 with the url of the repository instead of the name.
 
@@ -19,7 +19,7 @@ with the url of the repository instead of the name.
 Pkg.clone("git://github.com/pulsipher/FlexJuMP.jl.git")
 ```
 
-#### Documentation
+## Documentation
 [![](https://img.shields.io/badge/docs-latest-blue.svg)](https://pulsipher.github.io/FlexJuMP.jl/latest)
 
 Please visit our [documentation pages](https://pulsipher.github.io/FlexJuMP.jl/latest) to learn all you need to know to get started and more. We provide
@@ -32,7 +32,7 @@ The package is tested against Julia `0.6` on Linux, macOS, and Windows.
 
 There is not yet support for Julia `0.7` or `1.0`.
 
-#### Contributing
+## Contributing
 FlexJuMP is being actively developed an suggestions or other forms of contribution are encouraged.
 There are many ways to contribute to this package:
 
