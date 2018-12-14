@@ -19,8 +19,9 @@ branches:
 
 skip_commits:
   files:
-    - docs/*.md
-    - *.md
+    - docs/*
+    - '**/*.html'
+    - '**/*.md'
 
 notifications:
   - provider: Email
