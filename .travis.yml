@@ -14,7 +14,7 @@ notifications:
 script:
 #  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
   - julia -e 'Pkg.clone(pwd())'
-  - julia -e 'Pkg.test("PkgName",coverage=true)'
+  - julia -e 'Pkg.test("FlexJuMP",coverage=true)'
 after_success:
   - julia -e julia -e 'Pkg.add("Documenter")'
   - julia -e 'cd(Pkg.dir("FlexJuMP")); include(joinpath("docs", "make.jl"))'
