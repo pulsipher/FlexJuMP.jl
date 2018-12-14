@@ -1,6 +1,7 @@
 using Documenter, FlexJuMP
 
-makedocs(format = :html,
+makedocs(modules = [FlexJuMP],
+         format = :html,
          sitename = "FlexJuMP.jl",
          pages = ["Home" => "index.md",
                   "Background" => "background.md",
