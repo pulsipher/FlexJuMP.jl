@@ -1,6 +1,6 @@
 # FlexJuMP.jl
 
-A package for analyzing and quantifying the flexibility of complex systems.
+A JuMP extension for analyzing and quantifying the flexibility of complex systems.
 
 | **Documentation**                                                               | **Build Status**                                                                                |
 |:-------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
