@@ -4,9 +4,6 @@ using FlexJuMP
 else
     using Test
 end
-
-using FlexJuMP
-using Base.Test
 using Pavito, GLPKMathProgInterface, Ipopt
 using JuMP
 

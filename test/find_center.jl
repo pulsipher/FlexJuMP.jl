@@ -7,6 +7,9 @@
 @test all(findcenteredmean(m, center = :analytic, only_positive = true, update_mean = true) .>= 0)
 @test !all(getmean(m) .== means)
 
+# Test invalid input
+@test_throws ErrorException findcenteredmean(m, center = :Analytic)
+
 # Reset the mean back to correct value
 setmean(m, means)
 @test all(getmean(m) .== means)

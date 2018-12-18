@@ -1,8 +1,10 @@
 # Check default
 @test flex_data.uncertainty_set.name == :Ellipsoid && flex_data2.uncertainty_set.name == :Ellipsoid
+@test FlexJuMP.getuncertaintyset(m).name == :Ellipsoid
 
 # Check safeguards
 @test_throws ErrorException setuncertaintyset(m, :Ellipsoid)
+@test_throws ErrorException setuncertaintyset(m, :Ellipsoid, 42)
 @test_throws ErrorException setuncertaintyset(m, :PNorm)
 @test_throws ErrorException setuncertaintyset(m, :ellipsoid)
 @test_throws ErrorException setuncertaintyset(m, :PNorm, 3)

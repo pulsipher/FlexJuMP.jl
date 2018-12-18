@@ -52,7 +52,7 @@ Now that we have formalized the system parameters and equations we can setup and
 solve a flexibility model. Let's first setup the model using a hyperbox uncertainty
 set.
 
-```@example hx
+```julia
 using FlexJuMP, JuMP
 using Gurobi
 
@@ -81,14 +81,17 @@ setuncertaintyset(m, :Hyperbox, [[box_dev]; [box_dev]]);
 
 Before solving let's verify that the means provide a feasible nominal point.
 
-```@example hx
+```julia
 isvalid = ismeanfeasible(m)
+```
+```julia
+true
 ```
 
 Since the mean is feasible we can proceed to solve `m` using all the default
 settings and then extract the solution data.
 
-```@example hx
+```julia
 # Solve
   status = solve(m)
 
@@ -106,13 +109,23 @@ settings and then extract the solution data.
       print("Active Constraints:    ", actives)
   end
 ```
+```julia
+Flexibility Index:     0.5
+Critical Temperatures: [615.0, 383.0, 578.0, 318.0]
+Critical Cooling:      615.0
+Active Constraints:    [2, 5]
+```
+
 This result indicates that the largest feasible hyperbox uncertainty set is given
 by 50% of its nominal scale, meaning only ``\pm 5 K`` variations are feasible. Let's
 now specify the covariance matrix so we can estimate the stochastic flexibility index.
 
-```@example hx
+```julia
 setcovariance(m, covar)
 SF = findstochasticflexibility(m, use_vulnerability_model = true)
+```
+```julia
+0.9726
 ```
 
 Now let's change the uncertainty set to be ellipsoidal and resolve. Notice that
@@ -120,7 +133,7 @@ we don't need to provide the covariance as an attribute because we already set i
 with `setcovariance`. We also will enable diagonalization of the ellipsoidal
 constraint by using the keyword argument `diag:Bool`.
 
-```@example hx
+```julia
 # Change the uncertainty set
 setuncertaintyset(m, :Ellipsoid)
 
@@ -142,6 +155,13 @@ setuncertaintyset(m, :Ellipsoid)
       print("Critical Cooling:      ", round(cooling, 2), "\n")
       print("Active Constraints:    ", actives)
   end
+```
+```julia
+Flexibility Index:     3.6004
+Confidence Level:      0.5372
+Critical Temperatures: [620.0, 388.0, 581.0, 319.0]
+Critical Cooling:      620.0
+Active Constraints:    [2, 5]
 ```
 
 We note that the confidence level provides a lower bound on the stochastic
@@ -187,7 +207,7 @@ where ``\bar{\boldsymbol{\theta}} = \bar{\boldsymbol{\theta}}_{fc}`` and
 ``V_{\boldsymbol{\theta}} = 1200 \mathbb{I}``. We select the set
 ``T_{\infty}(\delta)``. Thus, we setup flexibility model.
 
-```@example ieee14
+```julia
 using FlexJuMP, JuMP
 using Gurobi, Pavito, Ipopt
 
@@ -245,7 +265,7 @@ setuncertaintyset(m, :PNorm, Inf);
 The flexibility model `m` is now defined, so now we compute the feasible center
 and solve `m`.
 
-```@example ieee14
+```julia
 # Compute a center to replace the mean if desired
 new_mean = findcenteredmean(m, center = :feasible, solver = GurobiSolver(OutputFlag = 0),
                             update_mean = true)
@@ -267,13 +287,32 @@ if status == :Optimal
     print("Active Constraints:  ", actives)
 end
 ```
+```julia
+Flexibility Index:   26.3636
+Active Constraints:  [7, 14, 25, 33, 41, 42, 43, 44, 45]
+```
 
 Now we will use the `rankinequalities` function to obtain a ranking of the most
 limiting components.
 
-```@example ieee14
+```julia
 # Rank the inequality constraints
 rank_data = rankinequalities(m, max_ranks = 3)
+```
+```julia
+3-element Array{Dict,1}:
+ Dict{String,Any}(Pair{String,Any}("flexibility_index", 26.3636),Pair{String,Any}("model", Feasibility problem with:
+ * 64 linear constraints
+ * 36 variables
+Solver is Pavito),Pair{String,Any}("active_constraints", [7, 14, 25, 33, 41, 42, 43, 44, 45]))
+ Dict{String,Any}(Pair{String,Any}("flexibility_index", 31.8181),Pair{String,Any}("model", Feasibility problem with:
+ * 64 linear constraints
+ * 36 variables
+Solver is Pavito),Pair{String,Any}("active_constraints", [21, 26, 47, 48, 49, 50]))
+ Dict{String,Any}(Pair{String,Any}("flexibility_index", 83.3332),Pair{String,Any}("model", Feasibility problem with:
+ * 64 linear constraints
+ * 36 variables
+Solver is Pavito),Pair{String,Any}("active_constraints", [1, 2, 3, 4, 10, 11, 12, 19, 36, 38, 46]))
 ```
 
 Thus, now we can identify which lines and generators most limit system flexibility.

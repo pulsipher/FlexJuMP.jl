@@ -38,7 +38,7 @@ Julia 1.0.
 ## Quick Start
 Below is a brief example of the high-level API, more explanation and examples are provided in [User Guide](@ref) and [Examples](@ref).
 
-```@example
+```julia
 using FlexJuMP, JuMP
 using Gurobi
 
@@ -75,6 +75,9 @@ actives_constrs = getactiveconstraints(m)
 
 # Print results
 print(flexibility_index)
+```
+```julia
+3.6003393030116135
 ```
 
 ## Outline

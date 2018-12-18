@@ -9,7 +9,7 @@ provided in [Library](@ref).
 
 The package needs to be loaded along with [JuMP.jl](https://github.com/JuliaOpt/JuMP.jl) in the usual manner:
 
-```@example userguide
+```julia
 using FlexJuMP, JuMP
 ```
 
@@ -19,9 +19,15 @@ The flexibility model is defined with the [`FlexibilityModel`](@ref) function
 and the solver that will be used to solve the flexibility index problem should
 be specified.
 
-```@example userguide
+```julia
 using Gurobi
 m = FlexibilityModel(solver = GurobiSolver(OutputFlag = 0))
+```
+```julia
+Feasibility problem with:
+ * 0 linear constraints
+ * 0 variables
+Solver is Gurobi
 ```
 
 Flexibility models are JuMP models that have been extended to include information
@@ -36,13 +42,6 @@ the flexibility index problem.
 Now we can add variables to `m` using the [`@randomvariable`](@ref) macro for random
 variables, the [`@recoursevariable`](@ref) macro for recourse/control variables,
 the standard `@variable` JuMP macro to add state variables.
-
-```@setup userguide
-means = [620; 388; 583; 313]
-@randomvariable(m, T[i = 1:4], mean = means[i])
-@recoursevariable(m, Qc)
-@variable(m, x)
-```
 
 ```julia
 means = [620; 388; 583; 313]
@@ -82,13 +81,19 @@ with the [`setmean`](@ref) function.
 Now we can add constraints to `m` via the `@constraint` macro as we normally would
 with typical JuMP models.
 
-```@example userguide
+```julia
 @constraint(m, -100 - 0.67Qc + 2T[2] + x <= 0.0)
 @constraint(m, -250 - T[2] == x)
 @constraint(m, 0.5Qc - 0.75T[1] - T[2] - T[3] <= -1388.5)
 @constraint(m, -Qc + 1.5T[1] + 2T[2] + T[3] >= 2044)
 @constraint(m, Qc - 1.5T[1] - 2T[2] - T[3] - 2T[4] <= -2830)
 @constraint(m, -Qc + 1.5T[1] + 2T[2] + T[3] + 3T[4] <= 3153)
+```
+```julia
+JuMP.ConstraintRef{JuMP.Model,FlexJuMP.FlexibilityConstraint}(Feasibility problem with:
+ * 6 linear constraints
+ * 6 variables
+Solver is Gurobi, 6)
 ```
 
 !!! note
@@ -103,7 +108,7 @@ one of the following symbols: `:Ellipsoid`, `:Hyperbox`, or `:PNorm`. The third
 argument should contain whatever attribute is needed for that uncertainty set type.
 Continuing the example above we would define an ellipsoidal set
 
-```@example userguide
+```julia
 covar = [11.11 0 0 0; 0 11.11 0 0; 0 0 11.11 0; 0 0 0 11.11]
 setuncertaintyset(m, :Ellipsoid, covar)
 ```
@@ -158,31 +163,55 @@ The mean corresponding to a particular random variable can be extracted via the
 [`getmean(variable::RandomVariable)`](@ref) method. Note that this only works for
 individual variables and that arrays of random variables are not valid input.
 
-```@example userguide
+```julia
 variable_mean = getmean(T[2])
+```
+```julia
+388
 ```
 
 The means of all the random variables in `m` can be extracted via the
 [`getmean(m::Model)`](@ref) method. For the current example we have
 
-```@example userguide
+```julia
 current_mean = getmean(m)
+```
+```julia
+4-element Array{Number,1}:
+ 620
+ 388
+ 583
+ 313
 ```
 
 The means of all the random variables in `m` can be redefined using the
 [`setmean`](@ref) method where the new means are passed as a vector in the second
 argument.
 
-```@example userguide
+```julia
 setmean(m, [1; 1; 1; 1])
+```
+```julia
+4-element Array{Int64,1}:
+ 1
+ 1
+ 1
+ 1
 ```
 
 Note that the new means vector must match the length of the current means vector,
 otherwise calling `setmean` will throw an error. We will reset means back to their
 original values before continuing.
 
-```@example userguide
+```julia
 setmean(m, means)
+```
+```julia
+4-element Array{Int64,1}:
+ 620
+ 388
+ 583
+ 313
 ```
 
 As discussed in the [Uncertainty Set Characterization](@ref)) section, it is critical
@@ -192,8 +221,11 @@ This tests the feasibility of the current mean for `m` using the feasibility
 function and returns `true` if it is feasible or `false` otherwise. In our current
 example we have
 
-```@example userguide
+```julia
 result = ismeanfeasible(m)
+```
+```julia
+true
 ```
 
 Thus, our current mean is feasible. By default the `ClpSolver` is used, but the
@@ -206,8 +238,15 @@ center by default, but can be changed via the `center::Symbol` keyword parameter
 where `:feasible` denotes the feasible center and `:analytic` refers to the analytic
 center. In our current example we have
 
-```@example userguide
+```julia
 centered_mean = findcenteredmean(m, center = :analytic)
+```
+```julia
+4-element Array{Float64,1}:
+  898.125
+ -507.214
+  594.544
+  317.23
 ```
 
 This center can be used to replace the mean by setting the `update_mean::Bool`
@@ -220,15 +259,29 @@ LP solver can be used to compute the feasible center.
 The covariance matrix stored in `m` can be extracted via the [`getcovariance`](@ref)
 method.
 
-```@example userguide
+```julia
 covar = getcovariance(m)
+```
+```julia
+4×4 Array{Number,2}:
+ 11.11   0.0    0.0    0.0
+  0.0   11.11   0.0    0.0
+  0.0    0.0   11.11   0.0
+  0.0    0.0    0.0   11.11
 ```
 
 The covariance matrix can be set or changed using the [`setcovariance`](@ref)
 function which requires the second argument to be `covariance::Matrix`.
 
-```@example userguide
+```julia
 setcovariance(m, covar)
+```
+```julia
+4×4 Array{Number,2}:
+ 11.11   0.0    0.0    0.0
+  0.0   11.11   0.0    0.0
+  0.0    0.0   11.11   0.0
+  0.0    0.0    0.0   11.11
 ```
 
 Note that the specified covariance must be symmetric positive semi-definite, otherwise
@@ -240,8 +293,11 @@ Now that the flexibility model `m` is defined we can solve it (i.e., solve the
 flexibility index problem). This is done simply by calling the JuMP `solve` function
 associated with the model. Thus, for our current example we have
 
-```@example userguide
+```julia
 solve(m, active_constr = true)
+```
+```julia
+:Optimal
 ```
 
 A number of keyword arguments can be passed which are each described in the
@@ -260,7 +316,7 @@ Now that `m` is solved, the optimized values of the variables can be extracted
 with the `getvalue` method as is normally done with JuMP models. With the current
 example we have
 
-```@example userguide
+```julia
 temperatures = getvalue(T)
 cooling = getvalue(Qc)
 state = getvalue(x)
@@ -272,16 +328,22 @@ Note that this can be done with single variables and/or arrays of variables.
 The optimized value of the flexibility index stored in `m` can now be retrieved
 by using the [`getflexibilityindex`](@ref) method.
 
-```@example userguide
+```julia
 flexibility_index = getflexibilityindex(m)
+```
+```julia
+3.600355086286672
 ```
 
 Similarly, the stored flexibility index can be used to obtain the confidence level
 if an ellipsoidal uncertainty set was used. This can be calculated using the
 [`getconfidencelevel`](@ref) function.
 
-```@example userguide
+```julia
 conf_lvl = getconfidencelevel(m)
+```
+```julia
+0.5372159367269034
 ```
 
 As discussed in the [Uncertainty Set Characterization](@ref) section, the
@@ -290,15 +352,23 @@ confidence level provides a lower bound on the stochastic flexibility index.
 The indexes of the active constraints can be obtained via the
 [`getactiveconstraints`](@ref) method.
 
-```@example userguide
+```julia
 actives = getactiveconstraints(m)
+```
+```julia
+2-element Array{Int64,1}:
+ 3
+ 6
 ```
 
 If desired, we can also directly extract all of the flexibility data associated
 with the [`FlexibilityData`](@ref) type.
 
-```@example userguide
+```julia
 data = getflexibilitydata(m)
+```
+```julia
+FlexJuMP.FlexibilityData(JuMP.AbstractConstraint[-0.67*Qc + 2*T[2] + x - 100 <= 0, -1*T[2] + -x - 250 == 0, 0.5*Qc + -0.75*T[1] + -1*T[2] + -1*T[3] + 1388.5 <= 0, -1*Qc + 1.5*T[1] + 2*T[2] + 1*T[3] + -2044 >= 0, 1*Qc + -1.5*T[1] + -2*T[2] + -1*T[3] + -2*T[4] + 2830 <= 0, -1*Qc + 1.5*T[1] + 2*T[2] + 1*T[3] + 3*T[4] + -3153 <= 0], 4, Number[620, 388, 583, 313], AbstractString["T[1]", "T[2]", "T[3]", "T[4]"], [1, 2, 3, 4], 1, AbstractString["Qc"], [5], FlexJuMP.EllipsoidalSet(:Ellipsoid, false), Number[11.11 0.0 0.0 0.0; 0.0 11.11 0.0 0.0; 0.0 0.0 11.11 0.0; 0.0 0.0 0.0 11.11], 3.600355086286672, [3, 6])
 ```
 
 ## Analysis Methods
@@ -312,8 +382,19 @@ dictionary contains the flexibility index, active constraint indexes, and optimi
 flexibility model corresponding to a particular rank level. With the current example
 we obtain
 
-```@example userguide
+```julia
 rank_data = rankinequalities(m, max_ranks = 3, active_constr = true)
+```
+```julia
+2-element Array{Dict,1}:
+ Dict{String,Any}(Pair{String,Any}("flexibility_index", 3.60036),Pair{String,Any}("model", Feasibility problem with:
+ * 6 linear constraints
+ * 6 variables
+Solver is Gurobi),Pair{String,Any}("active_constraints", [3, 6]))
+ Dict{String,Any}(Pair{String,Any}("flexibility_index", 9.93886e-8),Pair{String,Any}("model", Feasibility problem with:
+ * 6 linear constraints
+ * 6 variables
+Solver is Gurobi),Pair{String,Any}("active_constraints", [1, 5]))
 ```
 
 The keyword argument `max_ranks::Int = 5` specifies the maximum number of rank
@@ -328,8 +409,11 @@ The stochastic flexibility index can be computed via Monte Carlo sampling using
 the [`findstochasticflexibility`](@ref) function. The number of samples can be
 specified with the `num_pts::Int = 10000` keyword argument.
 
-```@example userguide
-SF = findstochasticflexibility(m, num_pts = 100, use_vulnerability_model = true)
+```julia
+SF = findstochasticflexibility(m, num_pts = 10000, use_vulnerability_model = true)
+```
+```julia
+0.9634
 ```
 
 By default each sample is evaluated individually, but all of them can be evaluated
@@ -344,4 +428,4 @@ only positive MC samples are used.
     By default the `ClpSolver` is used, but other solvers that support warm
     starts such as Gurobi and Cplex will improve performance if
     `use_vulnerability_model::Bool = false`. The solver can be changed with the
-    `solver` keyword argument. 
+    `solver` keyword argument.
