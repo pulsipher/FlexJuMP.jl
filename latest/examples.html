@@ -20,7 +20,7 @@
    0 &amp; 0 &amp; 11.11 &amp; 0 \\
    0 &amp; 0 &amp; 0 &amp; 11.11
  \end{bmatrix} K^2
-\end{equation}\]</div><p>The parameter variance <span>$\sigma_i^2$</span> is taken to be <span>$11.11 K^2$</span> which corresponds to <span>$\bar{\theta}_i \pm 3 \sigma_i$</span>, where <span>$3 \sigma_i$</span> is equated to <span>$10 K$</span> in accordance to the <span>$\pm 10 K$</span> variations historically reported.</p><p>Now that we have formalized the system parameters and equations we can setup and solve a flexibility model. Let&#39;s first setup the model using a hyperbox uncertainty set.</p><pre><code class="language-">using FlexJuMP, JuMP
+\end{equation}\]</div><p>The parameter variance <span>$\sigma_i^2$</span> is taken to be <span>$11.11 K^2$</span> which corresponds to <span>$\bar{\theta}_i \pm 3 \sigma_i$</span>, where <span>$3 \sigma_i$</span> is equated to <span>$10 K$</span> in accordance to the <span>$\pm 10 K$</span> variations historically reported.</p><p>Now that we have formalized the system parameters and equations we can setup and solve a flexibility model. Let&#39;s first setup the model using a hyperbox uncertainty set.</p><pre><code class="language-julia">using FlexJuMP, JuMP
 using Gurobi
 
 # Setup the uncertainty set parameters
@@ -43,7 +43,7 @@ m = FlexibilityModel(solver = GurobiSolver(OutputFlag = 0))
 @constraint(m, -3153 - Qc + 1.5T[1] + 2T[2] + T[3] + 3T[4] &lt;= 0.0)
 
 # Define the uncertainty set
-setuncertaintyset(m, :Hyperbox, [[box_dev]; [box_dev]]);</code></pre><p>Before solving let&#39;s verify that the means provide a feasible nominal point.</p><pre><code class="language-">isvalid = ismeanfeasible(m)</code></pre><p>Since the mean is feasible we can proceed to solve <code>m</code> using all the default settings and then extract the solution data.</p><pre><code class="language-"># Solve
+setuncertaintyset(m, :Hyperbox, [[box_dev]; [box_dev]]);</code></pre><p>Before solving let&#39;s verify that the means provide a feasible nominal point.</p><pre><code class="language-julia">isvalid = ismeanfeasible(m)</code></pre><pre><code class="language-julia">true</code></pre><p>Since the mean is feasible we can proceed to solve <code>m</code> using all the default settings and then extract the solution data.</p><pre><code class="language-julia"># Solve
   status = solve(m)
 
   if status == :Optimal
@@ -58,8 +58,11 @@ setuncertaintyset(m, :Hyperbox, [[box_dev]; [box_dev]]);</code></pre><p>Before s
       print(&quot;Critical Temperatures: &quot;, round.(temperatures, 2), &quot;\n&quot;)
       print(&quot;Critical Cooling:      &quot;, round(cooling, 2), &quot;\n&quot;)
       print(&quot;Active Constraints:    &quot;, actives)
-  end</code></pre><p>This result indicates that the largest feasible hyperbox uncertainty set is given by 50% of its nominal scale, meaning only <span>$\pm 5 K$</span> variations are feasible. Let&#39;s now specify the covariance matrix so we can estimate the stochastic flexibility index.</p><pre><code class="language-">setcovariance(m, covar)
-SF = findstochasticflexibility(m, use_vulnerability_model = true)</code></pre><p>Now let&#39;s change the uncertainty set to be ellipsoidal and resolve. Notice that we don&#39;t need to provide the covariance as an attribute because we already set it with <code>setcovariance</code>. We also will enable diagonalization of the ellipsoidal constraint by using the keyword argument <code>diag:Bool</code>.</p><pre><code class="language-"># Change the uncertainty set
+  end</code></pre><pre><code class="language-julia">Flexibility Index:     0.5
+Critical Temperatures: [615.0, 383.0, 578.0, 318.0]
+Critical Cooling:      615.0
+Active Constraints:    [2, 5]</code></pre><p>This result indicates that the largest feasible hyperbox uncertainty set is given by 50% of its nominal scale, meaning only <span>$\pm 5 K$</span> variations are feasible. Let&#39;s now specify the covariance matrix so we can estimate the stochastic flexibility index.</p><pre><code class="language-julia">setcovariance(m, covar)
+SF = findstochasticflexibility(m, use_vulnerability_model = true)</code></pre><pre><code class="language-julia">0.9726</code></pre><p>Now let&#39;s change the uncertainty set to be ellipsoidal and resolve. Notice that we don&#39;t need to provide the covariance as an attribute because we already set it with <code>setcovariance</code>. We also will enable diagonalization of the ellipsoidal constraint by using the keyword argument <code>diag:Bool</code>.</p><pre><code class="language-julia"># Change the uncertainty set
 setuncertaintyset(m, :Ellipsoid)
 
 # Solve
@@ -79,13 +82,17 @@ setuncertaintyset(m, :Ellipsoid)
       print(&quot;Critical Temperatures: &quot;, round.(temperatures, 2), &quot;\n&quot;)
       print(&quot;Critical Cooling:      &quot;, round(cooling, 2), &quot;\n&quot;)
       print(&quot;Active Constraints:    &quot;, actives)
-  end</code></pre><p>We note that the confidence level provides a lower bound on the stochastic flexibility index as we expect.</p><h2><a class="nav-anchor" id="IEEE-14-Bus-Power-Network-1" href="#IEEE-14-Bus-Power-Network-1">IEEE-14 Bus Power Network</a></h2><p>We now consider the IEEE 14-node power network. Which we model by performing balances at each node <span>$n \in \mathcal{C}$</span> and enforcing capacity constraints on the arcs <span>$a_k, k \in \mathcal{A},$</span> and on the suppliers <span>$s_b, b \in \mathcal{S}$</span>. The demands <span>$d_m, m \in \mathcal{D},$</span> are assumed to be the uncertain parameters. The flexibility index problem those seek to identify the largest set of simultaneous demand withdrawals that the system can tolerate. The deterministic network model is given by:</p><div>\[\begin{equation}
+  end</code></pre><pre><code class="language-julia">Flexibility Index:     3.6004
+Confidence Level:      0.5372
+Critical Temperatures: [620.0, 388.0, 581.0, 319.0]
+Critical Cooling:      620.0
+Active Constraints:    [2, 5]</code></pre><p>We note that the confidence level provides a lower bound on the stochastic flexibility index as we expect.</p><h2><a class="nav-anchor" id="IEEE-14-Bus-Power-Network-1" href="#IEEE-14-Bus-Power-Network-1">IEEE-14 Bus Power Network</a></h2><p>We now consider the IEEE 14-node power network. Which we model by performing balances at each node <span>$n \in \mathcal{C}$</span> and enforcing capacity constraints on the arcs <span>$a_k, k \in \mathcal{A},$</span> and on the suppliers <span>$s_b, b \in \mathcal{S}$</span>. The demands <span>$d_m, m \in \mathcal{D},$</span> are assumed to be the uncertain parameters. The flexibility index problem those seek to identify the largest set of simultaneous demand withdrawals that the system can tolerate. The deterministic network model is given by:</p><div>\[\begin{equation}
 	\sum_{k \in \mathcal{A}_n^{rec}} a_k - \sum_{k \in \mathcal{A}_n^{snd}} a_k + \sum_{b \in \mathcal{S}_n} s_b - \sum_{m \in \mathcal{D}_n} d_m = 0, \ \ \ n \in \mathcal{C}
 \end{equation}\]</div><div>\[\begin{equation}
 	-a_k^C \leq a_k \leq a_k^C, \ \ \ k \in \mathcal{A}
 \end{equation}\]</div><div>\[\begin{equation}
 	0 \leq s_b \leq s_b^C, \ \ \ b \in \mathcal{S}
-\end{equation}\]</div><p>where <span>$\mathcal{A}_n^{rec}$</span> denotes the set of receiving arcs at node <span>$n$</span>, <span>$\mathcal{A}_n^{snd}$</span> denotes the set of sending arcs at <span>$n$</span>, <span>$\mathcal{S}_n$</span> denotes the set of suppliers at <span>$n$</span>, <span>$\mathcal{D}_n$</span> denotes the set of demands at <span>$n$</span>, <span>$a_k^C$</span> are the arc capacities, and <span>$s_b^C$</span> are the supplier capacities.</p><p>This test case does not provide arc capacities so we enforce a capacity of 100 for all the arcs. A schematic of this system is provided below.</p><p><img src="images/ieee14_diagram.png" alt="ieee14"/></p><p>This system is subjected to a total of 10 uncertainty disturbances (the network demands). The demands are assumed to be <span>$\boldsymbol{\theta} \sim \mathcal{N}(\bar{\boldsymbol{\theta}}, V_{\boldsymbol{\theta}})$</span>, where <span>$\bar{\boldsymbol{\theta}} = \bar{\boldsymbol{\theta}}_{fc}$</span> and <span>$V_{\boldsymbol{\theta}} = 1200 \mathbb{I}$</span>. We select the set <span>$T_{\infty}(\delta)$</span>. Thus, we setup flexibility model.</p><pre><code class="language-">using FlexJuMP, JuMP
+\end{equation}\]</div><p>where <span>$\mathcal{A}_n^{rec}$</span> denotes the set of receiving arcs at node <span>$n$</span>, <span>$\mathcal{A}_n^{snd}$</span> denotes the set of sending arcs at <span>$n$</span>, <span>$\mathcal{S}_n$</span> denotes the set of suppliers at <span>$n$</span>, <span>$\mathcal{D}_n$</span> denotes the set of demands at <span>$n$</span>, <span>$a_k^C$</span> are the arc capacities, and <span>$s_b^C$</span> are the supplier capacities.</p><p>This test case does not provide arc capacities so we enforce a capacity of 100 for all the arcs. A schematic of this system is provided below.</p><p><img src="images/ieee14_diagram.png" alt="ieee14"/></p><p>This system is subjected to a total of 10 uncertainty disturbances (the network demands). The demands are assumed to be <span>$\boldsymbol{\theta} \sim \mathcal{N}(\bar{\boldsymbol{\theta}}, V_{\boldsymbol{\theta}})$</span>, where <span>$\bar{\boldsymbol{\theta}} = \bar{\boldsymbol{\theta}}_{fc}$</span> and <span>$V_{\boldsymbol{\theta}} = 1200 \mathbb{I}$</span>. We select the set <span>$T_{\infty}(\delta)$</span>. Thus, we setup flexibility model.</p><pre><code class="language-julia">using FlexJuMP, JuMP
 using Gurobi, Pavito, Ipopt
 
 # Set the dimensions
@@ -136,7 +143,7 @@ m = FlexibilityModel(solver = PavitoSolver(mip_solver = GurobiSolver(OutputFlag 
 
 # Define the covariance and the uncertainty set
 setcovariance(m, covar)
-setuncertaintyset(m, :PNorm, Inf);</code></pre><p>The flexibility model <code>m</code> is now defined, so now we compute the feasible center and solve <code>m</code>.</p><pre><code class="language-"># Compute a center to replace the mean if desired
+setuncertaintyset(m, :PNorm, Inf);</code></pre><p>The flexibility model <code>m</code> is now defined, so now we compute the feasible center and solve <code>m</code>.</p><pre><code class="language-julia"># Compute a center to replace the mean if desired
 new_mean = findcenteredmean(m, center = :feasible, solver = GurobiSolver(OutputFlag = 0),
                             update_mean = true)
 updated_mean = getmean(m)
@@ -155,5 +162,18 @@ if status == :Optimal
     # Print the results
     print(&quot;Flexibility Index:   &quot;, round(flexibility_index, 4), &quot;\n&quot;)
     print(&quot;Active Constraints:  &quot;, actives)
-end</code></pre><p>Now we will use the <code>rankinequalities</code> function to obtain a ranking of the most limiting components.</p><pre><code class="language-"># Rank the inequality constraints
-rank_data = rankinequalities(m, max_ranks = 3)</code></pre><p>Thus, now we can identify which lines and generators most limit system flexibility. We also observe how the flexibility index increases with each rank level as is expected.</p><footer><hr/><a class="previous" href="guide.html"><span class="direction">Previous</span><span class="title">User Guide</span></a><a class="next" href="api.html"><span class="direction">Next</span><span class="title">Library</span></a></footer></article></body></html>
+end</code></pre><pre><code class="language-julia">Flexibility Index:   26.3636
+Active Constraints:  [7, 14, 25, 33, 41, 42, 43, 44, 45]</code></pre><p>Now we will use the <code>rankinequalities</code> function to obtain a ranking of the most limiting components.</p><pre><code class="language-julia"># Rank the inequality constraints
+rank_data = rankinequalities(m, max_ranks = 3)</code></pre><pre><code class="language-julia">3-element Array{Dict,1}:
+ Dict{String,Any}(Pair{String,Any}(&quot;flexibility_index&quot;, 26.3636),Pair{String,Any}(&quot;model&quot;, Feasibility problem with:
+ * 64 linear constraints
+ * 36 variables
+Solver is Pavito),Pair{String,Any}(&quot;active_constraints&quot;, [7, 14, 25, 33, 41, 42, 43, 44, 45]))
+ Dict{String,Any}(Pair{String,Any}(&quot;flexibility_index&quot;, 31.8181),Pair{String,Any}(&quot;model&quot;, Feasibility problem with:
+ * 64 linear constraints
+ * 36 variables
+Solver is Pavito),Pair{String,Any}(&quot;active_constraints&quot;, [21, 26, 47, 48, 49, 50]))
+ Dict{String,Any}(Pair{String,Any}(&quot;flexibility_index&quot;, 83.3332),Pair{String,Any}(&quot;model&quot;, Feasibility problem with:
+ * 64 linear constraints
+ * 36 variables
+Solver is Pavito),Pair{String,Any}(&quot;active_constraints&quot;, [1, 2, 3, 4, 10, 11, 12, 19, 36, 38, 46]))</code></pre><p>Thus, now we can identify which lines and generators most limit system flexibility. We also observe how the flexibility index increases with each rank level as is expected.</p><footer><hr/><a class="previous" href="guide.html"><span class="direction">Previous</span><span class="title">User Guide</span></a><a class="next" href="api.html"><span class="direction">Next</span><span class="title">Library</span></a></footer></article></body></html>
