@@ -14,9 +14,6 @@ notifications:
 addons:
     apt_packages:
         - gfortran
-ignore:
-  - *.md
-  - ./*
 script:
 #  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
   - julia -e 'Pkg.clone(pwd())'
