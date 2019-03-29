@@ -122,6 +122,7 @@ and `RecourseVariable`), the uncertainty set, and solution results.
 - `covariance::Matrix{Number}` The covariance matrix.
 - `flexibility_index::Union{Void, Number}` The flexibility index result obtained from solving the flexibility model.
 - `active_constraints::Vector{Int}` The indexes of the active inequality constraints at the solution of the flexibility model.
+- 'solution_time::Number' The solution time in seconds.
 """
 mutable struct FlexibilityData
     flexibility_constraints::Vector{JuMP.AbstractConstraint}
@@ -142,6 +143,7 @@ mutable struct FlexibilityData
     covariance::Matrix{Number}
     flexibility_index::Union{Void, Number}
     active_constraints::Vector{Int}
+    solution_time::Union{Void, Number}
 end
 
 # Set methods to extract covariance information if appropriate

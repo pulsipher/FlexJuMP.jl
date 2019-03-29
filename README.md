@@ -33,7 +33,7 @@ The package is tested against Julia `0.6` on Linux, macOS, and Windows.
 There is not yet support for Julia `0.7` or `1.0`.
 
 ## Contributing
-FlexJuMP is being actively developed an suggestions or other forms of contribution are encouraged.
+FlexJuMP is being actively developed and suggestions or other forms of contribution are encouraged.
 There are many ways to contribute to this package:
 
 - Suggest new/improved functionality

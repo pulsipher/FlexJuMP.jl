@@ -25,3 +25,6 @@ setuncertaintyset(m, :Ellipsoid, eye(2))
 @test_throws ErrorException solve(m, active_constr = true) == :Optimal
 setuncertaintyset(m, :Ellipsoid, covar)
 @test solve(m, active_constr = true) == :Optimal && abs(getflexibilityindex(m) - 3.6) <= 1e-2
+
+# Test the solution time
+@test getsolutiontime(m) != nothing

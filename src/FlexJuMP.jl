@@ -20,6 +20,7 @@ index problem. Thus, basic functionality uses [`FlexibilityModel`](@ref), [`@ran
 - [`ismeanfeasible`](@ref)
 - [`findcenteredmean`](@ref)
 - [`getflexibilityindex`](@ref)
+- ['getsolutiontime'](@ref)
 - [`getconfidencelevel`](@ref)
 - [`getactiveconstraints`](@ref)
 - [`rankinequalities`](@ref)
@@ -34,7 +35,7 @@ module FlexJuMP
     # Define functions/macros to be readily accesible to the user
     export FlexibilityModel, @randomvariable, @recoursevariable, getflexibilitydata, setcovariance, getcovariance,
            getactiveconstraints, setuncertaintyset, getflexibilityindex, findcenteredmean, ismeanfeasible,
-           getconfidencelevel, findstochasticflexibility, rankinequalities, getmean, setmean
+           getconfidencelevel, findstochasticflexibility, rankinequalities, getmean, setmean, getsolutiontime
 
     # Import all of the datatypes, methods, macros, and definitions
     include("datatypes.jl")

@@ -19,7 +19,7 @@ Solver is Gurobi
 function FlexibilityModel(;solver = JuMP.UnsetSolver())
     m = Model(solver = solver)
     m.solvehook = solvehook     #solvehook is defined in solve.jl
-    m.ext[:FlexData] = FlexibilityData(FlexibilityConstraint[], 0, Float64[], String[], Int[], 0, String[], Int[], EllipsoidalSet(), Matrix(0, 0), nothing, Int[])
+    m.ext[:FlexData] = FlexibilityData(FlexibilityConstraint[], 0, Float64[], String[], Int[], 0, String[], Int[], EllipsoidalSet(), Matrix(0, 0), nothing, Int[], nothing)
     return m
 end
 
@@ -102,6 +102,20 @@ julia> getflexibilityindex(m)
 ```
 """
 getflexibilityindex(m::Model) = getflexibilitydata(m).flexibility_index
+
+"""
+    getsolutiontime(m::Model)
+Return the solution time to compute the flexibility index as stored in the flexibility model as stored in `FlexibilityData.solution_time`.
+
+**Arguments**
+- `m::Model` The flexibility model.
+
+```julia
+julia> getsolutiontime(m)
+0.00199127197265625
+```
+"""
+getsolutiontime(m::Model) = getflexibilitydata(m).solution_time
 
 """
     getactiveconstraints(m::Model)

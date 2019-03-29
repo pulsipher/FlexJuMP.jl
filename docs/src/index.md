@@ -21,7 +21,7 @@ it capabilities include:
 These techniques are described in greater detail in [Background](@ref).
 
 !!! note
-    Currently, FlexJuMP only accepts linear constraints and assumes the random variables to
+    Currently, FlexJuMP only accepts linear constraints and assumes the random variables to be
     multivariate Gaussian with a certain mean and covariance matrix specified by the user. Development
     is underway to allow for quadratic constraints and general nonlinear constraints.  
 

@@ -211,7 +211,9 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
     end
 
     # Solve the model
+    tic()
     status = solve(m_solve, suppress_warnings = suppress_warnings, ignore_solve_hook = true)
+    tic_time = toq()
 
     if status == :Optimal
         # Parse the optimized random variable values
@@ -247,6 +249,13 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
             flex_data.flexibility_index = getobjectivevalue(m_solve)^2
         else
             flex_data.flexibility_index = getobjectivevalue(m_solve)
+        end
+
+        # Save the solution time
+        try
+            flex_data.solution_time = getsolvetime(m_solve)
+        catch
+            flex_data.solution_time = tic_time
         end
     end
 
