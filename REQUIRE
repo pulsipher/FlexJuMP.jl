@@ -1,5 +1,5 @@
 julia 0.6 0.7-
 Ipopt
 Clp
-JuMP 0.15 
+JuMP 0.15 0.18.5-
 Distributions
