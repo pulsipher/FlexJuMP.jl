@@ -46,8 +46,9 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
 
     # Check that U is sufficiently large
     if maximum(abs.(fConsts)) >= U
-        warn("The slack upper bound (U) value of $U is too low for this problem. Thus, U is being set to ", 10 ^ ceil(log10(maximum(abs.(fConsts)))), "!")
-        U = 10 ^ ceil(log10(maximum(abs.(fConsts))))
+        U_new = 10 ^ ceil(log10(maximum(abs.(fConsts))))
+        @warn "The slack upper bound (U) value of $U is too low for this problem. Thus, U is being set to $U_new !"
+        U = U_new
     end
 
     # Inilialize the JuMP model to solve the MICP Problem
@@ -88,12 +89,12 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
     end
     if active_constr || n_x != 0 || n_z == 0
         if !active_constr
-            warn("Problem requires use of active set constraint. Setting active_constr = true")
+            @warn "Problem requires use of active set constraint. Setting active_constr = true"
         end
         if real_recourse_dim == -1
             real_recourse_dim = n_z
             if n_h != 0 && n_x == 0
-                warn("real_recourse_dim not specified. Setting real_recourse_dim to ", n_z)
+                @warn "real_recourse_dim not specified. Setting real_recourse_dim to $n_z"
             end
         end
         @constraint(m_solve, sum(y[j] for j = 1:n_f) == real_recourse_dim + 1)
@@ -162,7 +163,7 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
         if n_θ != size(covar)[1]
             error("The dimensions of the covariance matrix and the random variables do not match.")
         end
-        D, V = eig(inv(covar))
+        D, V = eigen(inv(covar))
         @variable(m_solve, w[1:n_θ])
         @constraint(m_solve, ws[i = 1:n_θ], w[i] == sqrt(D[i]) * sum(V[j, i] * (θ - θ_nom)[j] for j = 1:n_θ))
         if conic_δ
@@ -211,9 +212,7 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
     end
 
     # Solve the model
-    tic()
-    status = solve(m_solve, suppress_warnings = suppress_warnings, ignore_solve_hook = true)
-    tic_time = toq()
+    tic_time = @elapsed status = solve(m_solve, suppress_warnings = suppress_warnings, ignore_solve_hook = true)
 
     if status == :Optimal
         # Parse the optimized random variable values
@@ -239,7 +238,7 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
         end
 
         # Parse the active active constraints
-        active_inds = find(abs.(getvalue(y) - 1) .<= 1e-4)
+        active_inds = findall(abs.(getvalue(y) - 1) .<= 1e-4)
         flex_data.active_constraints = inequal_inds[active_inds]
 
         # Save the flexibility index
@@ -277,8 +276,8 @@ function MakeInputDict(m::Model)
     constr_bounds = JuMP.prepConstrBounds(m)  #A lower and A upper
 
     # Determine which constraints are inequalities and equalities
-    equal_inds = find(constr_bounds[1] .== constr_bounds[2])
-    inequal_inds = find(constr_bounds[1] .!= constr_bounds[2])
+    equal_inds = findall(constr_bounds[1] .== constr_bounds[2])
+    inequal_inds = findall(constr_bounds[1] .!= constr_bounds[2])
 
     # Parse the problem dimensions
     n_f = length(inequal_inds)
@@ -288,10 +287,10 @@ function MakeInputDict(m::Model)
     n_x = size(constr_coeffs)[2] - n_θ - n_z
 
     # Check inequality directions and adjust as necessary
-    reversed_inds = find(constr_bounds[2] .== Inf)
+    reversed_inds = findall(constr_bounds[2] .== Inf)
     constr_coeffs[reversed_inds, :] *= -1
     constr_bounds[2][reversed_inds] = -constr_bounds[1][reversed_inds]
-    constr_bounds[1][reversed_inds] = -Inf
+    constr_bounds[1][reversed_inds] .= -Inf
 
     # Parse the coefficent matrices needed for the flexibility index problem
     fConsts = -constr_bounds[2][inequal_inds]
@@ -308,7 +307,7 @@ function MakeInputDict(m::Model)
     if n_x != 0
         num_vars = n_x + n_z + n_θ
         var_cols = collect(1:num_vars)
-        state_cols = var_cols[BitArray(!contains(==, flex_data.RVcols, var_cols[i]) && !contains(==, flex_data.recourse_cols, var_cols[i]) for i = 1:num_vars)]
+        state_cols = var_cols[BitArray(!any((y-> ==(y, var_cols[i])), flex_data.RVcols) && !any((y-> ==(y, var_cols[i])), flex_data.recourse_cols) for i = 1:num_vars)]
         fStates = constr_coeffs[inequal_inds, state_cols]
         hStates = constr_coeffs[equal_inds, state_cols]
     else
@@ -363,11 +362,11 @@ function AddSystemExpressions(m::Model, input_dict::Dict, num_scenarios::Int = 0
                 @expression(m, fexpr[j = 1:n_f], fConsts[j] + sum(fControls[j, i] * m[:z][i] for i = 1:n_z) + sum(fRandoms[j, i] * m[:θ][i] for i = 1:n_θ) +
                             sum(fStates[j, i] * m[:x][i] for i = 1:n_x))
                 if n_h != 0
-                    @expression(m, hexpr[j = 1:n_h], hConsts[j] + sum(hControls[j, i] * m[:z][i]for i = 1:n_z) + sum(hRandoms[j, i] * m[:θ][i] for i = 1:n_θ) +
+                    @expression(m, hexpr[j = 1:n_h], hConsts[j] + sum(hControls[j, i] * m[:z][i] for i = 1:n_z) + sum(hRandoms[j, i] * m[:θ][i] for i = 1:n_θ) +
                                 sum(hStates[j, i] * m[:x][i] for i = 1:n_x))
                 end
             else
-                @expression(m, fexpr[j = 1:n_f], fConsts[j] + sum(fControls[j, i] * m[:z][i]for i = 1:n_z) + sum(fRandoms[j, i] * m[:θ][i] for i = 1:n_θ))
+                @expression(m, fexpr[j = 1:n_f], fConsts[j] + sum(fControls[j, i] * m[:z][i] for i = 1:n_z) + sum(fRandoms[j, i] * m[:θ][i] for i = 1:n_θ))
                 if n_h != 0
                     @expression(m, hexpr[j = 1:n_h], hConsts[j] + sum(hControls[j, i] * m[:z][i] for i = 1:n_z) + sum(hRandoms[j, i] * m[:θ][i] for i = 1:n_θ))
                 end
@@ -395,7 +394,7 @@ function AddSystemExpressions(m::Model, input_dict::Dict, num_scenarios::Int = 0
                                 sum(hStates[j, i] * m[:x][i, k] for i = 1:n_x))
                 end
             else
-                @expression(m, fexpr[j = 1:n_f, k = 1:num_scenarios], fConsts[j] + sum(fControls[j, i] * m[:z][i, k]for i = 1:n_z) + sum(fRandoms[j, i] * m[:θ][i, k] for i = 1:n_θ))
+                @expression(m, fexpr[j = 1:n_f, k = 1:num_scenarios], fConsts[j] + sum(fControls[j, i] * m[:z][i, k] for i = 1:n_z) + sum(fRandoms[j, i] * m[:θ][i, k] for i = 1:n_θ))
                 if n_h != 0
                     @expression(m, hexpr[j = 1:n_h, k = 1:num_scenarios], hConsts[j] + sum(hControls[j, i] * m[:z][i, k] for i = 1:n_z) + sum(hRandoms[j, i] * m[:θ][i, k] for i = 1:n_θ))
                 end

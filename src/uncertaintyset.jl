@@ -40,13 +40,13 @@ function setuncertaintyset(m::Model, uncertainty_set::Symbol, attribute = nothin
 
     # Setup ellipdoial set if specified and run checks
     if uncertainty_set == :Ellipsoid
-        if isa(attribute, Void) && length(flex_data.covariance) == 0
+        if isa(attribute, Nothing) && length(flex_data.covariance) == 0
             error("Ellipsoidal set requires a covariance matrix, but one is not provided.")
-        elseif !isa(attribute, Matrix) && !isa(attribute, Void)
+        elseif !isa(attribute, Matrix) && !isa(attribute, Nothing)
             error("Expected ellipsoidal attribute to be covariance matrix of type Matrix, but got attribute of type $attr_type.")
         end
         flex_data.uncertainty_set = EllipsoidalSet()
-        if !isa(attribute, Void)
+        if !isa(attribute, Nothing)
             setcovariance(m, attribute)
         end
         flex_data.uncertainty_set.only_positive = only_positive; nothing

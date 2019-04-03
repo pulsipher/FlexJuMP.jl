@@ -19,7 +19,7 @@ Solver is Gurobi
 function FlexibilityModel(;solver = JuMP.UnsetSolver())
     m = Model(solver = solver)
     m.solvehook = solvehook     #solvehook is defined in solve.jl
-    m.ext[:FlexData] = FlexibilityData(FlexibilityConstraint[], 0, Float64[], String[], Int[], 0, String[], Int[], EllipsoidalSet(), Matrix(0, 0), nothing, Int[], nothing)
+    m.ext[:FlexData] = FlexibilityData(FlexibilityConstraint[], 0, Float64[], String[], Int[], 0, String[], Int[], EllipsoidalSet(), Matrix(undef, 0, 0), nothing, Int[], nothing)
     return m
 end
 
@@ -33,7 +33,7 @@ regular JuMP model.
 
 ```julia
 julia> getflexibilitydata(m)
-FlexJuMP.FlexibilityData(JuMP.AbstractConstraint[], 0, Number[], AbstractString[], Int64[], 0, AbstractString[], Int64[], FlexJuMP.EllipsoidalSet(:Ellipsoid, false), Array{Number}(0,0), nothing, Int64[])
+FlexJuMP.FlexibilityData(JuMP.AbstractConstraint[], 0, Number[], AbstractString[], Int64[], 0, AbstractString[], Int64[], FlexJuMP.EllipsoidalSet(:Ellipsoid, false), Array{Number}(undef,0,0), nothing, Int64[], nothing)
 ```
 """
 function getflexibilitydata(m::Model)
@@ -154,7 +154,7 @@ function setcovariance(m::Model, covariance::Matrix)
     n_row,ncol = size(covariance)
     n_row == ncol || error("Covariance matrix should be square")
     issymmetric(covariance) || error("Covariance matrix should be symmetric")
-    all(eig(covariance)[1] .>= 0) || error("Covariance matrix is not positive semi-definite")
+    all(eigen(covariance).values .>= 0) || error("Covariance matrix is not positive semi-definite")
 
     # Set the covariance matrix
     flex_data = getflexibilitydata(m)

@@ -28,5 +28,5 @@ setuncertaintyset(m2, :PNorm, 1, only_positive = true)
 @test flex_data2.uncertainty_set.name == :PNorm && flex_data2.uncertainty_set.only_positive
 setuncertaintyset(m2, :Hyperbox, [[[1; 1]]; [[1; 1]]], only_positive = true)
 @test flex_data2.uncertainty_set.name == :Hyperbox && flex_data2.uncertainty_set.only_positive
-setuncertaintyset(m2, :Ellipsoid, eye(flex_data2.numRVs), only_positive = true)
+setuncertaintyset(m2, :Ellipsoid, Matrix(I, flex_data2.numRVs, flex_data2.numRVs), only_positive = true)
 @test flex_data2.uncertainty_set.name == :Ellipsoid && flex_data2.uncertainty_set.only_positive

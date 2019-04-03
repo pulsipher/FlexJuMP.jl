@@ -39,20 +39,20 @@ function rankinequalities(m::Model; max_ranks::Int = 5, suppress_warnings::Bool 
 
     # Initialize data
     m_copy = deepcopy(m)
-    ranked_data = Vector{Dict}(max_ranks)
+    ranked_data = Vector{Dict}(undef, max_ranks)
     ranked_constrs = []
     inactives = []
     counter = 0
 
     # Get the inequality information
     constr_bounds = JuMP.prepConstrBounds(m_copy)
-    inequal_inds = find(constr_bounds[1] .!= constr_bounds[2])
+    inequal_inds = findall(constr_bounds[1] .!= constr_bounds[2])
 
     # Iteratively solve the flexibility index problem and extract data
     for i = 1:max_ranks
         status = solve(m_copy, suppress_warnings = suppress_warnings, U = U, diag = diag, active_constr = active_constr, real_recourse_dim = real_recourse_dim, conic_δ = conic_δ, inactives = inactives)
         if status == :Optimal
-            ranked_constrs = [find(inequal_inds .== getactiveconstraints(m_copy)[j])[1] for j = 1:length(getactiveconstraints(m_copy))]
+            ranked_constrs = [findall(inequal_inds .== getactiveconstraints(m_copy)[j])[1] for j = 1:length(getactiveconstraints(m_copy))]
             inactives = unique([inactives; ranked_constrs])
             ranked_data[i] = Dict("flexibility_index" => getflexibilityindex(m_copy), "active_constraints" => getactiveconstraints(m_copy), "model" => m_copy)
             counter += 1
@@ -147,11 +147,11 @@ function findstochasticflexibility(m::Model; num_pts::Int = 10000, toler::Number
 
     # Setup a multivariate normal distribution and Monte Carlo samples
     if seed >= 0
-        srand(seed)
+        Random.seed!(seed)
     end
     d = MvNormal(Vector{Float64}(flex_data.RVmeans), Matrix{Float64}(getcovariance(m)))
     if only_positive
-        samples = Array{Float64}(flex_data.numRVs, num_pts)
+        samples = Array{Float64}(undef, flex_data.numRVs, num_pts)
         not_done = true
         counter = 1
         while not_done
@@ -171,7 +171,7 @@ function findstochasticflexibility(m::Model; num_pts::Int = 10000, toler::Number
     # Determine which points are outside of the set and check for F
     F = getflexibilityindex(m)
     if use_flexibility_index && F == nothing
-        warn("Flexibility index hasn't yet been computed. Setting use_flexibility_index = false.")
+        @warn "Flexibility index hasn't yet been computed. Setting use_flexibility_index = false."
         use_flexibility_index = false
     elseif use_flexibility_index && flex_data.uncertainty_set.name == :Ellipsoid
         inv_covar = inv(getcovariance(m))
@@ -179,7 +179,7 @@ function findstochasticflexibility(m::Model; num_pts::Int = 10000, toler::Number
     elseif use_flexibility_index && flex_data.uncertainty_set.name == :PNorm
         outside_set = [norm(samples[:, k] - θ_nom, flex_data.uncertainty_set.p) > F for k = 1:num_pts]
     elseif use_flexibility_index && flex_data.uncertainty_set.name == :Hyperbox
-        outside_set = Vector{Bool}(num_pts)
+        outside_set = Vector{Bool}(undef, num_pts)
         for k = 1:num_pts
             all_inside = true
             for i = 1:flex_data.numRVs
@@ -280,7 +280,7 @@ function findstochasticflexibility(m::Model; num_pts::Int = 10000, toler::Number
             end
         end
         if infeasible_counter != 0
-            warn("Not all scenario subproblems not solved to optimality, estmation of SF might not be correct.")
+            @warn "Not all scenario subproblems not solved to optimality, estmation of SF might not be correct."
         end
         if use_flexibility_index
             return (sum(feasible_results) + num_pts - num_test_pts) / (num_pts - infeasible_counter)

@@ -120,7 +120,7 @@ and `RecourseVariable`), the uncertainty set, and solution results.
 - `recourse_cols::Vector{Int}` The index of each `RecourseVariable`.
 - `uncertainty_set::AbstractUncertaintySet` The uncertainty set DataType with all of the set specfic attributes.
 - `covariance::Matrix{Number}` The covariance matrix.
-- `flexibility_index::Union{Void, Number}` The flexibility index result obtained from solving the flexibility model.
+- `flexibility_index::Union{Nothing, Number}` The flexibility index result obtained from solving the flexibility model.
 - `active_constraints::Vector{Int}` The indexes of the active inequality constraints at the solution of the flexibility model.
 - 'solution_time::Number' The solution time in seconds.
 """
@@ -141,9 +141,9 @@ mutable struct FlexibilityData
     # Various formulation data/results
     uncertainty_set::AbstractUncertaintySet  #e.g. ellipsoidal, 1-norm, 2-norm, etc...
     covariance::Matrix{Number}
-    flexibility_index::Union{Void, Number}
+    flexibility_index::Union{Nothing, Number}
     active_constraints::Vector{Int}
-    solution_time::Union{Void, Number}
+    solution_time::Union{Nothing, Number}
 end
 
 # Set methods to extract covariance information if appropriate

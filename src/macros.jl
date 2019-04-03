@@ -1,5 +1,5 @@
-using Base.Meta
-if Pkg.installed("JuMP") >= v"0.18.4"
+using Base.Meta, Pkg
+if Pkg.installed()["JuMP"] >= v"0.18.4"
     import JuMP.undef
 end
 

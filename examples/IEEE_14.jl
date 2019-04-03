@@ -2,6 +2,7 @@ using JuMP
 using FlexJuMP
 using Gurobi
 using Pavito, Ipopt
+using LinearAlgebra
 
 # Set the dimensions
 n_gens = 5
@@ -10,7 +11,7 @@ n_dems = 11
 
 # Setup the uncertainty set parameters
 β = 240.
-covar = eye(n_dems) * 1200.
+covar = Matrix(I, n_dems, n_dems) * 1200.
 covar[covar .== 0] = β
 box_dev = ones(n_dems) * 2 * sqrt(covar[1])
 

@@ -1,6 +1,7 @@
 using JuMP
 using FlexJuMP
 using Gurobi
+using LinearAlgebra
 
 # Set the dimensions
 n_lines = 2

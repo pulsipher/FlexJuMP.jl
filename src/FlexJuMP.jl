@@ -30,6 +30,8 @@ module FlexJuMP
 
     using Distributions
     using JuMP
+    using LinearAlgebra
+    using Random
     using Ipopt, Clp # Default solver
 
     # Define functions/macros to be readily accesible to the user

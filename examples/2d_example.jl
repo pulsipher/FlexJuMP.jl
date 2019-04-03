@@ -1,6 +1,4 @@
-using JuMP
-using FlexJuMP
-using Gurobi
+using JuMP, FlexJuMP, Gurobi
 
 # Set the covariance matrix for the uncertain parameters
 means = [4.0; 5.0]

@@ -132,7 +132,8 @@ function ComputeCenter(m::Model, center::Symbol, solver, toler::Number, only_pos
     # Solve and return
     status = solve(m_solve)
     if center == :feasible && getvalue(u) > toler
-        warn("Optimized mean is not feasible, can only achieve inequalities with upper bound u = ", getvalue(u))
+        upper_b = getvalue(u)
+        @warn "Optimized mean is not feasible, can only achieve inequalities with upper bound u = $upper_b"
     end
     return getvalue(θ)
 end
