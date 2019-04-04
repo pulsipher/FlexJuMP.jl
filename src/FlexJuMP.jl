@@ -20,7 +20,7 @@ index problem. Thus, basic functionality uses [`FlexibilityModel`](@ref), [`@ran
 - [`ismeanfeasible`](@ref)
 - [`findcenteredmean`](@ref)
 - [`getflexibilityindex`](@ref)
-- ['getsolutiontime'](@ref)
+- [`getsolutiontime`](@ref)
 - [`getconfidencelevel`](@ref)
 - [`getactiveconstraints`](@ref)
 - [`rankinequalities`](@ref)
