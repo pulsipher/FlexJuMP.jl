@@ -4,7 +4,7 @@ A JuMP extension for analyzing and quantifying the flexibility of complex system
 
 | **Documentation**                                                               | **Build Status**                                                                                |
 |:-------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
-| [![](https://img.shields.io/badge/docs-latest-blue.svg)](https://pulsipher.github.io/FlexJuMP.jl/latest) | [![Build Status](https://travis-ci.org/pulsipher/FlexJuMP.jl.svg?branch=master)](https://travis-ci.org/pulsipher/FlexJuMP.jl) [![Build Status2](https://ci.appveyor.com/api/projects/status/github/pulsipher/FlexJuMP.jl?branch=master&svg=true)](https://ci.appveyor.com/project/pulsipher/FlexJuMP-jl) [![codecov.io](http://codecov.io/github/pulsipher/FlexJuMP.jl/coverage.svg?branch=master)](http://codecov.io/github/pulsipher/FlexJuMP.jl?branch=master) |
+| [![](https://img.shields.io/badge/docs-latest-blue.svg)](https://pulsipher.github.io/FlexJuMP.jl/dev) | [![Build Status](https://travis-ci.org/pulsipher/FlexJuMP.jl.svg?branch=master)](https://travis-ci.org/pulsipher/FlexJuMP.jl) [![Build Status2](https://ci.appveyor.com/api/projects/status/github/pulsipher/FlexJuMP.jl?branch=master&svg=true)](https://ci.appveyor.com/project/pulsipher/FlexJuMP-jl) [![codecov.io](http://codecov.io/github/pulsipher/FlexJuMP.jl/coverage.svg?branch=master)](http://codecov.io/github/pulsipher/FlexJuMP.jl?branch=master) |
 
 Comments, suggestions and improvements are welcome and appreciated.
 
@@ -21,9 +21,9 @@ Pkg.add("git://github.com/pulsipher/FlexJuMP.jl.git")
 ```
 
 ## Documentation
-[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://pulsipher.github.io/FlexJuMP.jl/latest)
+[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://pulsipher.github.io/FlexJuMP.jl/dev)
 
-Please visit our [documentation pages](https://pulsipher.github.io/FlexJuMP.jl/latest) to learn all you need to know to get started and more. We provide
+Please visit our [documentation pages](https://pulsipher.github.io/FlexJuMP.jl/dev) to learn all you need to know to get started and more. We provide
 a quick start guide, an overview necessary background material, a detailed user guide, examples, and
 an API library.
 
