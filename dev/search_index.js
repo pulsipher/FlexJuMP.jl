@@ -1,7 +1,7 @@
 var documenterSearchIndex = {"docs": [
 
 {
-    "location": "index.html#",
+    "location": "#",
     "page": "Home",
     "title": "Home",
     "category": "page",
@@ -9,7 +9,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "index.html#FlexJuMP.jl-1",
+    "location": "#FlexJuMP.jl-1",
     "page": "Home",
     "title": "FlexJuMP.jl",
     "category": "section",
@@ -17,7 +17,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "index.html#Overview-1",
+    "location": "#Overview-1",
     "page": "Home",
     "title": "Overview",
     "category": "section",
@@ -25,15 +25,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "index.html#Installation-1",
+    "location": "#Installation-1",
     "page": "Home",
     "title": "Installation",
     "category": "section",
-    "text": "FlexJuMP.jl is not yet a registered Julia package, but can still be installed by providing the package manager with the url of the repository instead of the name.Pkg.clone(\"git://github.com/pulsipher/FlexJuMP.jl.git\")Also, FlexJuMP.jl only supports Julia 0.6, but soon will be compatible with Julia 0.7 and Julia 1.0."
+    "text": "FlexJuMP.jl is not yet a registered Julia package, but can still be installed by providing the package manager with the url of the repository instead of the name.using Pkg\nPkg.add(\"git://github.com/pulsipher/FlexJuMP.jl.git\")The latest version of FlexJuMP.jl now only supports Julia 0.7 and above. A version is still available for use with Julia 0.6 under the julia-0.6 branch."
 },
 
 {
-    "location": "index.html#Quick-Start-1",
+    "location": "#Quick-Start-1",
     "page": "Home",
     "title": "Quick Start",
     "category": "section",
@@ -41,7 +41,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "index.html#Outline-1",
+    "location": "#Outline-1",
     "page": "Home",
     "title": "Outline",
     "category": "section",
@@ -49,7 +49,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "index.html#Acknowledgements-1",
+    "location": "#Acknowledgements-1",
     "page": "Home",
     "title": "Acknowledgements",
     "category": "section",
@@ -57,7 +57,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#",
+    "location": "background/#",
     "page": "Background",
     "title": "Background",
     "category": "page",
@@ -65,7 +65,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#Background-1",
+    "location": "background/#Background-1",
     "page": "Background",
     "title": "Background",
     "category": "section",
@@ -73,7 +73,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#System-Characterization-1",
+    "location": "background/#System-Characterization-1",
     "page": "Background",
     "title": "System Characterization",
     "category": "section",
@@ -81,7 +81,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#Stochastic-Flexibility-Index-Problem-1",
+    "location": "background/#Stochastic-Flexibility-Index-Problem-1",
     "page": "Background",
     "title": "Stochastic Flexibility Index Problem",
     "category": "section",
@@ -89,7 +89,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#Flexibility-Index-Problem-1",
+    "location": "background/#Flexibility-Index-Problem-1",
     "page": "Background",
     "title": "Flexibility Index Problem",
     "category": "section",
@@ -97,7 +97,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#Uncertainty-Set-Characterization-1",
+    "location": "background/#Uncertainty-Set-Characterization-1",
     "page": "Background",
     "title": "Uncertainty Set Characterization",
     "category": "section",
@@ -105,7 +105,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "background.html#Analysis-Techniques-1",
+    "location": "background/#Analysis-Techniques-1",
     "page": "Background",
     "title": "Analysis Techniques",
     "category": "section",
@@ -113,7 +113,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#",
+    "location": "guide/#",
     "page": "User Guide",
     "title": "User Guide",
     "category": "page",
@@ -121,7 +121,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#User-Guide-1",
+    "location": "guide/#User-Guide-1",
     "page": "User Guide",
     "title": "User Guide",
     "category": "section",
@@ -129,7 +129,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Model-Definition-and-Setup-1",
+    "location": "guide/#Model-Definition-and-Setup-1",
     "page": "User Guide",
     "title": "Model Definition and Setup",
     "category": "section",
@@ -137,7 +137,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Flexibility-Model-Definition-1",
+    "location": "guide/#Flexibility-Model-Definition-1",
     "page": "User Guide",
     "title": "Flexibility Model Definition",
     "category": "section",
@@ -145,7 +145,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Variable-Definition-1",
+    "location": "guide/#Variable-Definition-1",
     "page": "User Guide",
     "title": "Variable Definition",
     "category": "section",
@@ -153,7 +153,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Constraint-Definition-1",
+    "location": "guide/#Constraint-Definition-1",
     "page": "User Guide",
     "title": "Constraint Definition",
     "category": "section",
@@ -161,7 +161,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Uncertainty-Set-Definition-1",
+    "location": "guide/#Uncertainty-Set-Definition-1",
     "page": "User Guide",
     "title": "Uncertainty Set Definition",
     "category": "section",
@@ -169,7 +169,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Pre-Solution-Methods-1",
+    "location": "guide/#Pre-Solution-Methods-1",
     "page": "User Guide",
     "title": "Pre-Solution Methods",
     "category": "section",
@@ -177,7 +177,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Mean-Extraction/Manipulation-1",
+    "location": "guide/#Mean-Extraction/Manipulation-1",
     "page": "User Guide",
     "title": "Mean Extraction/Manipulation",
     "category": "section",
@@ -185,7 +185,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Covariance-Extraction/Manipulation-1",
+    "location": "guide/#Covariance-Extraction/Manipulation-1",
     "page": "User Guide",
     "title": "Covariance Extraction/Manipulation",
     "category": "section",
@@ -193,7 +193,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Model-Solution-1",
+    "location": "guide/#Model-Solution-1",
     "page": "User Guide",
     "title": "Model Solution",
     "category": "section",
@@ -201,7 +201,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Post-Solution-Methods-1",
+    "location": "guide/#Post-Solution-Methods-1",
     "page": "User Guide",
     "title": "Post-Solution Methods",
     "category": "section",
@@ -209,7 +209,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Critical-Point-Extraction-1",
+    "location": "guide/#Critical-Point-Extraction-1",
     "page": "User Guide",
     "title": "Critical Point Extraction",
     "category": "section",
@@ -217,7 +217,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Flexibility-Index-Information-1",
+    "location": "guide/#Flexibility-Index-Information-1",
     "page": "User Guide",
     "title": "Flexibility Index Information",
     "category": "section",
@@ -225,7 +225,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Analysis-Methods-1",
+    "location": "guide/#Solution-Time-Extraction-1",
+    "page": "User Guide",
+    "title": "Solution Time Extraction",
+    "category": "section",
+    "text": "The optimal solution time stored in m can be extracted using the getsolutiontime method. This is extracted from the if it is supported, otherwise it is determined using the @elapsed macro. With the current example we have:opt_time = getsolutiontime(m)0.0034827596723466"
+},
+
+{
+    "location": "guide/#Analysis-Methods-1",
     "page": "User Guide",
     "title": "Analysis Methods",
     "category": "section",
@@ -233,7 +241,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Ranking-Limiting-Constraints-1",
+    "location": "guide/#Ranking-Limiting-Constraints-1",
     "page": "User Guide",
     "title": "Ranking Limiting Constraints",
     "category": "section",
@@ -241,7 +249,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "guide.html#Stochastic-Flexibility-Index-1",
+    "location": "guide/#Stochastic-Flexibility-Index-1",
     "page": "User Guide",
     "title": "Stochastic Flexibility Index",
     "category": "section",
@@ -249,7 +257,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "examples.html#",
+    "location": "examples/#",
     "page": "Examples",
     "title": "Examples",
     "category": "page",
@@ -257,7 +265,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "examples.html#Examples-1",
+    "location": "examples/#Examples-1",
     "page": "Examples",
     "title": "Examples",
     "category": "section",
@@ -265,7 +273,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "examples.html#Heat-Exchanger-Network-1",
+    "location": "examples/#Heat-Exchanger-Network-1",
     "page": "Examples",
     "title": "Heat Exchanger Network",
     "category": "section",
@@ -273,7 +281,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "examples.html#IEEE-14-Bus-Power-Network-1",
+    "location": "examples/#IEEE-14-Bus-Power-Network-1",
     "page": "Examples",
     "title": "IEEE-14 Bus Power Network",
     "category": "section",
@@ -281,7 +289,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api.html#",
+    "location": "api/#",
     "page": "Library",
     "title": "Library",
     "category": "page",
@@ -289,7 +297,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api.html#Library-1",
+    "location": "api/#Library-1",
     "page": "Library",
     "title": "Library",
     "category": "section",
@@ -297,15 +305,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api.html#FlexJuMP",
+    "location": "api/#FlexJuMP.FlexJuMP",
     "page": "Library",
-    "title": "FlexJuMP",
+    "title": "FlexJuMP.FlexJuMP",
     "category": "module",
-    "text": "FlexJuMP\n\nA Julia package that implements a computational framework for quantifying and analyzing system flexibility.\n\nThe basic functionality emulates typical JuMP models to facilitate general computation of the flexibility index problem. Thus, basic functionality uses FlexibilityModel, @randomvariable, @recoursevariable, @variable, @constraint, setuncertaintyset, and solve.\n\nMethods/Macros\n\nFlexibilityModel\n@randomvariable\n@recoursevariable\ngetflexibilitydata\nsetcovariance\ngetcovariance\ngetmean\nsetmean\nsetuncertaintyset\nismeanfeasible\nfindcenteredmean\ngetflexibilityindex\n\'getsolutiontime\'\ngetconfidencelevel\ngetactiveconstraints\nrankinequalities\nfindstochasticflexibility\n\n\n\n"
+    "text": "FlexJuMP\n\nA Julia package that implements a computational framework for quantifying and analyzing system flexibility.\n\nThe basic functionality emulates typical JuMP models to facilitate general computation of the flexibility index problem. Thus, basic functionality uses FlexibilityModel, @randomvariable, @recoursevariable, @variable, @constraint, setuncertaintyset, and solve.\n\nMethods/Macros\n\nFlexibilityModel\n@randomvariable\n@recoursevariable\ngetflexibilitydata\nsetcovariance\ngetcovariance\ngetmean\nsetmean\nsetuncertaintyset\nismeanfeasible\nfindcenteredmean\ngetflexibilityindex\ngetsolutiontime\ngetconfidencelevel\ngetactiveconstraints\nrankinequalities\nfindstochasticflexibility\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#Module-1",
+    "location": "api/#Module-1",
     "page": "Library",
     "title": "Module",
     "category": "section",
@@ -313,247 +321,255 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api.html#FlexJuMP.FlexibilityModel",
+    "location": "api/#FlexJuMP.FlexibilityModel",
     "page": "Library",
     "title": "FlexJuMP.FlexibilityModel",
     "category": "function",
-    "text": "FlexibilityModel(; [solver = JuMP.UnsetSolver()])\n\nReturn a flexibility model object which extends a JuMP model object to contain FlexibilityData and implement a custom solvehook. An appropriate solver should be specified in order solve the flexibility index problem. A solver capable of handling MIQCPs is required for ellipsoidal and 2-norm uncertainty sets otherwise a MILP solver can be used. This model is solved with solve, see solvehook for documention on the accepted keyword arguments.\n\nArguments\n\nsolver = JuMP.UnsetSolver() The solver, should use an MIQCP, MINLP, or MILP solver as appropriate.\n\njulia> m = FlexibilityModel(solver = GurobiSolver())\nFeasibility problem with:\n * 0 linear constraints\n * 0 variables\nSolver is Gurobi\n\n\n\n"
+    "text": "FlexibilityModel(; [solver = JuMP.UnsetSolver()])\n\nReturn a flexibility model object which extends a JuMP model object to contain FlexibilityData and implement a custom solvehook. An appropriate solver should be specified in order solve the flexibility index problem. A solver capable of handling MIQCPs is required for ellipsoidal and 2-norm uncertainty sets otherwise a MILP solver can be used. This model is solved with solve, see solvehook for documention on the accepted keyword arguments.\n\nArguments\n\nsolver = JuMP.UnsetSolver() The solver, should use an MIQCP, MINLP, or MILP solver as appropriate.\n\njulia> m = FlexibilityModel(solver = GurobiSolver())\nFeasibility problem with:\n * 0 linear constraints\n * 0 variables\nSolver is Gurobi\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.@randomvariable",
+    "location": "api/#FlexJuMP.@randomvariable",
     "page": "Library",
     "title": "FlexJuMP.@randomvariable",
     "category": "macro",
-    "text": "@randomvariable(m, x, mean)\n\nDefines a random variable using RandomVariable(m::Model, mean::Number, name::AbstractString) and requires that a mean for the variable be provided. This can later be overwritten with setmean.\n\nArguments\n\nm::Model The flexibility model.\nx::Symbol The variable name.\nmean::Number The variable mean\n\njulia> @randomvariable(m2, w, mean = 42)\n\njulia> @randomvariable(m2, ws[i = 1:4], mean = 42)\n4-element Array{FlexJuMP.RandomVariable,1}:\n FlexJuMP.RandomVariable(Feasibility problem with:\n * 9 linear constraints\n * 89 variables\n\n julia> @randomvariable(m2, ws[i = 1:4], mean = [1; 2; 3; 4][i])\n 4-element Array{FlexJuMP.RandomVariable,1}:\n  FlexJuMP.RandomVariable(Feasibility problem with:\n  * 9 linear constraints\n  * 96 variables\n\n\n\n"
+    "text": "@randomvariable(m, x, mean)\n\nDefines a random variable using RandomVariable(m::Model, mean::Number, name::AbstractString) and requires that a mean for the variable be provided. This can later be overwritten with setmean.\n\nArguments\n\nm::Model The flexibility model.\nx::Symbol The variable name.\nmean::Number The variable mean\n\njulia> @randomvariable(m2, w, mean = 42)\n\njulia> @randomvariable(m2, ws[i = 1:4], mean = 42)\n4-element Array{FlexJuMP.RandomVariable,1}:\n FlexJuMP.RandomVariable(Feasibility problem with:\n * 9 linear constraints\n * 89 variables\n\n julia> @randomvariable(m2, ws[i = 1:4], mean = [1; 2; 3; 4][i])\n 4-element Array{FlexJuMP.RandomVariable,1}:\n  FlexJuMP.RandomVariable(Feasibility problem with:\n  * 9 linear constraints\n  * 96 variables\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.@recoursevariable",
+    "location": "api/#FlexJuMP.@recoursevariable",
     "page": "Library",
     "title": "FlexJuMP.@recoursevariable",
     "category": "macro",
-    "text": "@recoursevariable(m, x)\n\nDefines a recourse variable using RecourseVariable(m::Model, name::AbstractString).\n\nArguments\n\nm::Model The flexibility model.\nx::Symbol The variable name.\n\njulia> @recoursevariable(m2, d)\n\njulia> @recoursevariable(m2, ds[1:4])\n4-element Array{FlexJuMP.RecourseVariable,1}:\n FlexJuMP.RecourseVariable(Feasibility problem with:\n * 9 linear constraints\n * 101 variables\n\n\n\n"
+    "text": "@recoursevariable(m, x)\n\nDefines a recourse variable using RecourseVariable(m::Model, name::AbstractString).\n\nArguments\n\nm::Model The flexibility model.\nx::Symbol The variable name.\n\njulia> @recoursevariable(m2, d)\n\njulia> @recoursevariable(m2, ds[1:4])\n4-element Array{FlexJuMP.RecourseVariable,1}:\n FlexJuMP.RecourseVariable(Feasibility problem with:\n * 9 linear constraints\n * 101 variables\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getflexibilitydata",
+    "location": "api/#FlexJuMP.getflexibilitydata",
     "page": "Library",
     "title": "FlexJuMP.getflexibilitydata",
     "category": "function",
-    "text": "getflexibilitydata(m::Model)\n\nReturn the FlexibilityData corresponding the flexibility model m. An error is thrown if m is a regular JuMP model.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getflexibilitydata(m)\nFlexJuMP.FlexibilityData(JuMP.AbstractConstraint[], 0, Number[], AbstractString[], Int64[], 0, AbstractString[], Int64[], FlexJuMP.EllipsoidalSet(:Ellipsoid, false), Array{Number}(0,0), nothing, Int64[])\n\n\n\n"
+    "text": "getflexibilitydata(m::Model)\n\nReturn the FlexibilityData corresponding the flexibility model m. An error is thrown if m is a regular JuMP model.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getflexibilitydata(m)\nFlexJuMP.FlexibilityData(JuMP.AbstractConstraint[], 0, Number[], AbstractString[], Int64[], 0, AbstractString[], Int64[], FlexJuMP.EllipsoidalSet(:Ellipsoid, false), Array{Number}(undef,0,0), nothing, Int64[], nothing)\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.setcovariance",
+    "location": "api/#FlexJuMP.setcovariance",
     "page": "Library",
     "title": "FlexJuMP.setcovariance",
     "category": "function",
-    "text": "setcovariance(m::Model, covariance::Matrix)\n\nSpecify the covariance matrix covariance to be stored in the flexibility model m. This method verifies that the matrix is symmetric positive semi-definite and writes it to FlexibilityData.covariance.\n\nArguments\n\nm::Model The flexibility model.\ncovariance::Matrix The covariance matrix.\n\njulia> setcovariance(m, [2 1; 1 2])\n2×2 Array{Int64,2}:\n 2  1\n 1  2\n\n\n\n"
+    "text": "setcovariance(m::Model, covariance::Matrix)\n\nSpecify the covariance matrix covariance to be stored in the flexibility model m. This method verifies that the matrix is symmetric positive semi-definite and writes it to FlexibilityData.covariance.\n\nArguments\n\nm::Model The flexibility model.\ncovariance::Matrix The covariance matrix.\n\njulia> setcovariance(m, [2 1; 1 2])\n2×2 Array{Int64,2}:\n 2  1\n 1  2\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getcovariance",
+    "location": "api/#FlexJuMP.getcovariance",
     "page": "Library",
     "title": "FlexJuMP.getcovariance",
     "category": "function",
-    "text": "getcovariance(m::Model)\n\nReturn the current covariance matrix in the flexibility model as stored in FlexibilityData.covariance.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getcovariance(m)\n4×4 Array{Number,2}:\n 11.11   0.0    0.0    0.0\n  0.0   11.11   0.0    0.0\n  0.0    0.0   11.11   0.0\n  0.0    0.0    0.0   11.11\n\n\n\n"
+    "text": "getcovariance(m::Model)\n\nReturn the current covariance matrix in the flexibility model as stored in FlexibilityData.covariance.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getcovariance(m)\n4×4 Array{Number,2}:\n 11.11   0.0    0.0    0.0\n  0.0   11.11   0.0    0.0\n  0.0    0.0   11.11   0.0\n  0.0    0.0    0.0   11.11\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.setmean",
+    "location": "api/#FlexJuMP.setmean",
     "page": "Library",
     "title": "FlexJuMP.setmean",
     "category": "function",
-    "text": "setmean(m::Model, mean::Vector)\n\nSpecify the mean corresponding to FlexibilityData.RVmeans stored in the flexibility model m. This method verifies that the length of the input mean matches the length of FlexibilityData.RVmeans before overwriting the current mean.\n\nArguments\n\nm::Model The flexibility model.\nmean::Vector The means of the random variables.\n\nsetmean(m, [2.3; 5])\n2-element Array{Float64,1}:\n 2.3\n 5.0\n\n\n\n"
+    "text": "setmean(m::Model, mean::Vector)\n\nSpecify the mean corresponding to FlexibilityData.RVmeans stored in the flexibility model m. This method verifies that the length of the input mean matches the length of FlexibilityData.RVmeans before overwriting the current mean.\n\nArguments\n\nm::Model The flexibility model.\nmean::Vector The means of the random variables.\n\nsetmean(m, [2.3; 5])\n2-element Array{Float64,1}:\n 2.3\n 5.0\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getmean-Tuple{JuMP.Model}",
+    "location": "api/#FlexJuMP.getmean-Tuple{Model}",
     "page": "Library",
     "title": "FlexJuMP.getmean",
     "category": "method",
-    "text": "getmean(m::Model)\n\nReturn the current mean vector in the flexibility model as stored in FlexibilityData.RVmeans.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getmean(m)\n4-element Array{Number,1}:\n 620\n 388\n 583\n 313\n\n\n\n"
+    "text": "getmean(m::Model)\n\nReturn the current mean vector in the flexibility model as stored in FlexibilityData.RVmeans.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getmean(m)\n4-element Array{Number,1}:\n 620\n 388\n 583\n 313\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getmean-Tuple{FlexJuMP.RandomVariable}",
+    "location": "api/#FlexJuMP.getmean-Tuple{FlexJuMP.RandomVariable}",
     "page": "Library",
     "title": "FlexJuMP.getmean",
     "category": "method",
-    "text": "getmean(variable::RandomVariable)\n\nReturn the mean corresponding to a particular RandomVariable. Currently this only accepts a single random variable and vector variables are not accepted directly.\n\nArguments\n\nvariable::RandomVariable The random variable name, must be a single variable.\n\njulia> getmean(T[1])\n620\n\n\n\n"
+    "text": "getmean(variable::RandomVariable)\n\nReturn the mean corresponding to a particular RandomVariable. Currently this only accepts a single random variable and vector variables are not accepted directly.\n\nArguments\n\nvariable::RandomVariable The random variable name, must be a single variable.\n\njulia> getmean(T[1])\n620\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.setuncertaintyset",
+    "location": "api/#FlexJuMP.setuncertaintyset",
     "page": "Library",
     "title": "FlexJuMP.setuncertaintyset",
     "category": "function",
-    "text": "setuncertaintyset(m::Model, uncertainty_set::Symbol, [attribute = nothing; only_positive::Bool = false])\n\nSpecify the type of uncertainty set to be used and stored in FlexibilityData.uncertainty_set and provide the necessary attribute. An ellipsoidal uncertainty set can be specified with the :Ellipsoid symbol and the corresponding covariance matrix will need to input via attribute if it has not already been set with setcovariance. A hyperbox uncertainty set is specified with the :Hyperbox symbol and corresponding negative/positive deviation vectors need to be inputed via attribute as a vector of vectors of the form [[neg_dev]; [pos_dev]]. Finally, a p-norm uncertainty set can be specified with the :PNorm symbol and providing the corresponding p value via attribute where p can equal 1, 2, or Inf.\n\nArguments\n\nm::Model The flexibility model.\nuncertainty_set::Symbol The uncertainty set name.\nattribute = nothing The necessary atribute for the specified uncertainty set.\n\nKeyword Arguments\n\nonly_positive::Bool = false Indicate if the uncertainty set should be intersected with the set of all positive values.\n\njulia> setuncertaintyset(m, :Ellipsoid)\n\njulia> setuncertaintyset(m, :Ellipsoid, eye(4)* 11.11)\n\njulia> setuncertaintyset(m, :Hyperbox, [[ones(4)]; [ones(4)]])\nFlexJuMP.HyperboxSet(:Hyperbox, Number[1.0, 1.0, 1.0, 1.0], Number[1.0, 1.0, 1.0, 1.0], false)\n\njulia> setuncertaintyset(m, :PNorm, 1)\nFlexJuMP.PNormSet(:PNorm, 1, false)\n\njulia> setuncertaintyset(m, :PNorm, 2, only_positive = true)\nFlexJuMP.PNormSet(:PNorm, 2, true)\n\njulia> setuncertaintyset(m, :PNorm, Inf)\nFlexJuMP.PNormSet(:PNorm, Inf, false)\n\n\n\n"
+    "text": "setuncertaintyset(m::Model, uncertainty_set::Symbol, [attribute = nothing; only_positive::Bool = false])\n\nSpecify the type of uncertainty set to be used and stored in FlexibilityData.uncertainty_set and provide the necessary attribute. An ellipsoidal uncertainty set can be specified with the :Ellipsoid symbol and the corresponding covariance matrix will need to input via attribute if it has not already been set with setcovariance. A hyperbox uncertainty set is specified with the :Hyperbox symbol and corresponding negative/positive deviation vectors need to be inputed via attribute as a vector of vectors of the form [[neg_dev]; [pos_dev]]. Finally, a p-norm uncertainty set can be specified with the :PNorm symbol and providing the corresponding p value via attribute where p can equal 1, 2, or Inf.\n\nArguments\n\nm::Model The flexibility model.\nuncertainty_set::Symbol The uncertainty set name.\nattribute = nothing The necessary atribute for the specified uncertainty set.\n\nKeyword Arguments\n\nonly_positive::Bool = false Indicate if the uncertainty set should be intersected with the set of all positive values.\n\njulia> setuncertaintyset(m, :Ellipsoid)\n\njulia> setuncertaintyset(m, :Ellipsoid, eye(4)* 11.11)\n\njulia> setuncertaintyset(m, :Hyperbox, [[ones(4)]; [ones(4)]])\nFlexJuMP.HyperboxSet(:Hyperbox, Number[1.0, 1.0, 1.0, 1.0], Number[1.0, 1.0, 1.0, 1.0], false)\n\njulia> setuncertaintyset(m, :PNorm, 1)\nFlexJuMP.PNormSet(:PNorm, 1, false)\n\njulia> setuncertaintyset(m, :PNorm, 2, only_positive = true)\nFlexJuMP.PNormSet(:PNorm, 2, true)\n\njulia> setuncertaintyset(m, :PNorm, Inf)\nFlexJuMP.PNormSet(:PNorm, Inf, false)\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.ismeanfeasible",
+    "location": "api/#FlexJuMP.ismeanfeasible",
     "page": "Library",
     "title": "FlexJuMP.ismeanfeasible",
     "category": "function",
-    "text": "ismeanfeasible(m::Model; [toler::Number = 1e-5, solver = Clp.ClpSolver()])\n\nReturns a Bool indicating if the mean stored in FlexibilityData.RVmeans is feasible, meaning that it lies inside the feasible region. This check is done using the so-called feasibility function.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\ntoler::Number = 1e-5 The numerical tolerance for checking the feasibility.\nsolver = Clp.ClpSolver() The solver, any LP or NLP solver shoudl work.\n\njulia> ismeanfeasible(m)\ntrue\n\njulia> ismeanfeasible(m, solver = GurobiSolver(OutputFlag = 0))\nAcademic license - for non-commercial use only\ntrue\n\n\n\n"
+    "text": "ismeanfeasible(m::Model; [toler::Number = 1e-5, solver = Clp.ClpSolver()])\n\nReturns a Bool indicating if the mean stored in FlexibilityData.RVmeans is feasible, meaning that it lies inside the feasible region. This check is done using the so-called feasibility function.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\ntoler::Number = 1e-5 The numerical tolerance for checking the feasibility.\nsolver = Clp.ClpSolver() The solver, any LP or NLP solver shoudl work.\n\njulia> ismeanfeasible(m)\ntrue\n\njulia> ismeanfeasible(m, solver = GurobiSolver(OutputFlag = 0))\nAcademic license - for non-commercial use only\ntrue\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.findcenteredmean",
+    "location": "api/#FlexJuMP.findcenteredmean",
     "page": "Library",
     "title": "FlexJuMP.findcenteredmean",
     "category": "function",
-    "text": "findcenteredmean(m::Model; [center::Symbol = :feasible, solver = Ipopt.IpoptSolver(print_level = 0), toler::Number = 1e-5, update_mean::Bool = false, only_positive::Bool = false])\n\nReturns a center point based on the analytic or feasible center. The result can overwrite the mean stored in FlexibilityData.RVmeans if desired. This is a wrapper function for ComputeCenter.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\ncenter::Symbol = :feasible Indicates the type of center, accepted arguments are :feasible and :analytic.\nsolver = Ipopt.IpoptSolver(print_level = 0) The solver which must be an NLP solver for the analytic center.\ntoler::Number = 1e-5 The tolerance to check solution validity.\nupdate_mean::Bool = false Indicates if the computed center should overwrite FlexibilityData.RVmeans.\nonly_positive::Bool = false Indicates if the center need by strictly positive.\n\njulia> findcenteredmean(m, only_positive = true)\n4-element Array{Float64,1}:\n 1684.74\n   79.0718\n  195.073\n    0.0\n\njulia> findcenteredmean(m, center = :analytic, update_mean = true)\n4-element Array{Float64,1}:\n  898.125\n -507.214\n  594.544\n  317.23\n\n\n\n"
+    "text": "findcenteredmean(m::Model; [center::Symbol = :feasible, solver = Ipopt.IpoptSolver(print_level = 0), toler::Number = 1e-5, update_mean::Bool = false, only_positive::Bool = false])\n\nReturns a center point based on the analytic or feasible center. The result can overwrite the mean stored in FlexibilityData.RVmeans if desired. This is a wrapper function for ComputeCenter.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\ncenter::Symbol = :feasible Indicates the type of center, accepted arguments are :feasible and :analytic.\nsolver = Ipopt.IpoptSolver(print_level = 0) The solver which must be an NLP solver for the analytic center.\ntoler::Number = 1e-5 The tolerance to check solution validity.\nupdate_mean::Bool = false Indicates if the computed center should overwrite FlexibilityData.RVmeans.\nonly_positive::Bool = false Indicates if the center need by strictly positive.\n\njulia> findcenteredmean(m, only_positive = true)\n4-element Array{Float64,1}:\n 1684.74\n   79.0718\n  195.073\n    0.0\n\njulia> findcenteredmean(m, center = :analytic, update_mean = true)\n4-element Array{Float64,1}:\n  898.125\n -507.214\n  594.544\n  317.23\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getflexibilityindex",
+    "location": "api/#FlexJuMP.getflexibilityindex",
     "page": "Library",
     "title": "FlexJuMP.getflexibilityindex",
     "category": "function",
-    "text": "getflexibilityindex(m::Model)\n\nReturn the current flexibility index in the flexibility model as stored in FlexibilityData.flexibility_index.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getflexibilityindex(m)\n3.5993764186390327\n\n\n\n"
+    "text": "getflexibilityindex(m::Model)\n\nReturn the current flexibility index in the flexibility model as stored in FlexibilityData.flexibility_index.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getflexibilityindex(m)\n3.5993764186390327\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getconfidencelevel",
+    "location": "api/#FlexJuMP.getconfidencelevel",
     "page": "Library",
     "title": "FlexJuMP.getconfidencelevel",
     "category": "function",
-    "text": "getconfidencelevel(m::Model)\n\nReturn the confidence level provided that the flexibility model m has been solved with an ellipsoidal uncertainty set. This is equivalent to the quantile associated with the optimized uncertainty set. Note that this assumes a multivariate Gaussian distribution with mean FlexibilityData.RVmeans and covariance FlexibilityData.covariance.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getconfidencelevel(m)\n0.5370703369769008\n\n\n\n"
+    "text": "getconfidencelevel(m::Model)\n\nReturn the confidence level provided that the flexibility model m has been solved with an ellipsoidal uncertainty set. This is equivalent to the quantile associated with the optimized uncertainty set. Note that this assumes a multivariate Gaussian distribution with mean FlexibilityData.RVmeans and covariance FlexibilityData.covariance.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getconfidencelevel(m)\n0.5370703369769008\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.getactiveconstraints",
+    "location": "api/#FlexJuMP.getsolutiontime",
+    "page": "Library",
+    "title": "FlexJuMP.getsolutiontime",
+    "category": "function",
+    "text": "getsolutiontime(m::Model)\n\nReturn the solution time to compute the flexibility index as stored in the flexibility model as stored in FlexibilityData.solution_time.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getsolutiontime(m)\n0.00199127197265625\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/#FlexJuMP.getactiveconstraints",
     "page": "Library",
     "title": "FlexJuMP.getactiveconstraints",
     "category": "function",
-    "text": "getactiveconstraints(m::Model)\n\nReturn the current vector of active constraint indexes in the flexibility model as stored in FlexibilityData.active_constraints.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getactiveconstraints(m)\n2-element Array{Int64,1}:\n 3\n 6\n\n\n\n"
+    "text": "getactiveconstraints(m::Model)\n\nReturn the current vector of active constraint indexes in the flexibility model as stored in FlexibilityData.active_constraints.\n\nArguments\n\nm::Model The flexibility model.\n\njulia> getactiveconstraints(m)\n2-element Array{Int64,1}:\n 3\n 6\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#JuMP.getvalue-Tuple{FlexJuMP.FlexibilityVariable}",
+    "location": "api/#JuMP.getvalue-Tuple{FlexJuMP.FlexibilityVariable}",
     "page": "Library",
     "title": "JuMP.getvalue",
     "category": "method",
-    "text": "JuMP.getvalue(v::FlexibilityVariable)\n\nReturn the value of the a flexibility variable this is an extension of JuMP.getvalue.\n\nArguments\n\nv::FlexibilityVariable The flexibility variable.\n\njulia> getvalue(T)\n4-element Array{Float64,1}:\n 620.0\n 388.0\n 581.0\n 319.0\n\n\n\n"
+    "text": "JuMP.getvalue(v::FlexibilityVariable)\n\nReturn the value of the a flexibility variable this is an extension of JuMP.getvalue.\n\nArguments\n\nv::FlexibilityVariable The flexibility variable.\n\njulia> getvalue(T)\n4-element Array{Float64,1}:\n 620.0\n 388.0\n 581.0\n 319.0\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.rankinequalities",
+    "location": "api/#FlexJuMP.rankinequalities",
     "page": "Library",
     "title": "FlexJuMP.rankinequalities",
     "category": "function",
-    "text": "rankinequalities(m::Model; max_ranks::Int = 5, suppress_warnings::Bool = true, U::Int = 10000, diag::Bool = false, active_constr::Bool = false, real_recourse_dim::Int = -1, conic_δ::Bool = false)\n\nReturns ranking data in the form Vector{Dict} where each dictionary corresponds to a particular rank level and contains the optimal flexibility_index, active constraint indexes, and flexibility model. The function will iteratively solve copies of the flexibility model via solve where the prior active constraints are turned off in order rank the most limiting constraints. The user can specify the maximum number of rank levels and the flexibility index problem will be repeatedly solved until that maximum is acheived or the problem becomes unbounded, which occurs first.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\nmax_ranks::Int = 5 The maximum number of rank levels. 2\nsuppress_warnings::Bool = false Indicates if solver warnings should be suppressed.\nU::Union{Int, Float64} = 10000 The slack variable upper bound.\ndiag::Bool = false Indicates whether or not to diagnonalize ellipsoidal uncertainty set (this is only active when an ellipsoidal set is used).\nactive_constr::Bool = false Indicates if the optional active constraint should be used which enforces how many inequalities are active at the solution, this must be set to true for systems without control variables and/or contain state variables.\nreal_recourse_dim::Int = -1 The actual number of recourse variables in case state variables are included as recourse variables. This is mandatory if active_constr = true and no state variables are provided.\nconic_δ::Bool = false This should be set to true if a conic solver is used such as Pajarito.jl.\n\njulia> rankinequalities(m, active_constr = true)\n2-element Array{Dict,1}:\n Dict{String,Any}(Pair{String,Any}(\"flexibility_index\", 3.59938),Pair{String,Any}(\"model\", Feasibility problem with:\n * 6 linear constraints\n * 6 variables\nSolver is Pavito),Pair{String,Any}(\"active_constraints\", [3, 6]))\n Dict{String,Any}(Pair{String,Any}(\"flexibility_index\", 9.58983),Pair{String,Any}(\"model\", Feasibility problem with:\n * 6 linear constraints\n * 6 variables\nSolver is Pavito),Pair{String,Any}(\"active_constraints\", [1, 5]))\n\n\n\n"
+    "text": "rankinequalities(m::Model; max_ranks::Int = 5, suppress_warnings::Bool = true, U::Int = 10000, diag::Bool = false, active_constr::Bool = false, real_recourse_dim::Int = -1, conic_δ::Bool = false)\n\nReturns ranking data in the form Vector{Dict} where each dictionary corresponds to a particular rank level and contains the optimal flexibility_index, active constraint indexes, and flexibility model. The function will iteratively solve copies of the flexibility model via solve where the prior active constraints are turned off in order rank the most limiting constraints. The user can specify the maximum number of rank levels and the flexibility index problem will be repeatedly solved until that maximum is acheived or the problem becomes unbounded, which occurs first.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\nmax_ranks::Int = 5 The maximum number of rank levels. 2\nsuppress_warnings::Bool = false Indicates if solver warnings should be suppressed.\nU::Union{Int, Float64} = 10000 The slack variable upper bound.\ndiag::Bool = false Indicates whether or not to diagnonalize ellipsoidal uncertainty set (this is only active when an ellipsoidal set is used).\nactive_constr::Bool = false Indicates if the optional active constraint should be used which enforces how many inequalities are active at the solution, this must be set to true for systems without control variables and/or contain state variables.\nreal_recourse_dim::Int = -1 The actual number of recourse variables in case state variables are included as recourse variables. This is mandatory if active_constr = true and no state variables are provided.\nconic_δ::Bool = false This should be set to true if a conic solver is used such as Pajarito.jl.\n\njulia> rankinequalities(m, active_constr = true)\n2-element Array{Dict,1}:\n Dict{String,Any}(Pair{String,Any}(\"flexibility_index\", 3.59938),Pair{String,Any}(\"model\", Feasibility problem with:\n * 6 linear constraints\n * 6 variables\nSolver is Pavito),Pair{String,Any}(\"active_constraints\", [3, 6]))\n Dict{String,Any}(Pair{String,Any}(\"flexibility_index\", 9.58983),Pair{String,Any}(\"model\", Feasibility problem with:\n * 6 linear constraints\n * 6 variables\nSolver is Pavito),Pair{String,Any}(\"active_constraints\", [1, 5]))\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.findstochasticflexibility",
+    "location": "api/#FlexJuMP.findstochasticflexibility",
     "page": "Library",
     "title": "FlexJuMP.findstochasticflexibility",
     "category": "function",
-    "text": "findstochasticflexibility(m::Model; num_pts::Int = 10000, toler::Number = 1e-5, solver = Clp.ClpSolver(), only_positive::Bool = false, use_vulnerability_model::Bool = false, use_flexibility_index::Bool = false, seed::Int = -1)\n\nReturns the estimated stochastic flexibility index that is evaluated via Monte Carlo sampling. At default this estimation is carried out by evaluating the feasibility of each Monte Carlo sample. The samples are generating from a multivariate Gaussian distribution with mean FlexibilityData.RVmeans and covariance FlexibilityData.covariance. The vulnerability model also tests the feasibility of the samples, but does so in one large optimization problem instead of evaluating each sample indiviually. The optimized flexibility index can also be used to reduce the number of samples that need to be evaluated.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\nnum_pts::Int = 10000 Number of Monte Carlo samples.\ntoler::Number = 1e-5 The feasibility check tolerance.\nsolver = Clp.ClpSolver() The solver, any LP or NLP solver should work.\nonly_positive::Bool = false Indicates if only positive samples should be used.\nuse_vulnerability_model::Bool = false Indicates if the vulnerability model should be used.\nuse_flexibility_index::Bool = false Indicates if the optimal flexibility index should be used.\nseed::Int = -1 Random seed for sample collection, any negative value will turn off the random seed.\n\njulia> findstochasticflexibility(m)\n0.9687\n\njulia> findstochasticflexibility(m, use_vulnerability_model = true)\n0.9705\n\njulia> findstochasticflexibility(m, num_pts = 5000, use_flexibility_index = true)\n0.973\n\n\n\n"
+    "text": "findstochasticflexibility(m::Model; num_pts::Int = 10000, toler::Number = 1e-5, solver = Clp.ClpSolver(), only_positive::Bool = false, use_vulnerability_model::Bool = false, use_flexibility_index::Bool = false, seed::Int = -1)\n\nReturns the estimated stochastic flexibility index that is evaluated via Monte Carlo sampling. At default this estimation is carried out by evaluating the feasibility of each Monte Carlo sample. The samples are generating from a multivariate Gaussian distribution with mean FlexibilityData.RVmeans and covariance FlexibilityData.covariance. The vulnerability model also tests the feasibility of the samples, but does so in one large optimization problem instead of evaluating each sample indiviually. The optimized flexibility index can also be used to reduce the number of samples that need to be evaluated.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\nnum_pts::Int = 10000 Number of Monte Carlo samples.\ntoler::Number = 1e-5 The feasibility check tolerance.\nsolver = Clp.ClpSolver() The solver, any LP or NLP solver should work.\nonly_positive::Bool = false Indicates if only positive samples should be used.\nuse_vulnerability_model::Bool = false Indicates if the vulnerability model should be used.\nuse_flexibility_index::Bool = false Indicates if the optimal flexibility index should be used.\nseed::Int = -1 Random seed for sample collection, any negative value will turn off the random seed.\n\njulia> findstochasticflexibility(m)\n0.9687\n\njulia> findstochasticflexibility(m, use_vulnerability_model = true)\n0.9705\n\njulia> findstochasticflexibility(m, num_pts = 5000, use_flexibility_index = true)\n0.973\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#JuMP.linearindex-Tuple{FlexJuMP.FlexibilityVariable}",
+    "location": "api/#JuMP.linearindex-Tuple{FlexJuMP.FlexibilityVariable}",
     "page": "Library",
     "title": "JuMP.linearindex",
     "category": "method",
-    "text": "JuMP.linearindex(v::FlexibilityVariable)\n\nReturn the index of the a flexibility variable this is an extension of JuMP.linearindex.\n\nArguments\n\nv::FlexibilityVariable The flexibility variable, must be a single variable.\n\njulia> linearindex(Qc)\n1\n\n\n\n"
+    "text": "JuMP.linearindex(v::FlexibilityVariable)\n\nReturn the index of the a flexibility variable this is an extension of JuMP.linearindex.\n\nArguments\n\nv::FlexibilityVariable The flexibility variable, must be a single variable.\n\njulia> linearindex(Qc)\n1\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#Functions/Methods-1",
+    "location": "api/#Functions/Methods-1",
     "page": "Library",
     "title": "Functions/Methods",
     "category": "section",
-    "text": "FlexibilityModel\n@randomvariable\n@recoursevariable\ngetflexibilitydata\nsetcovariance\ngetcovariance\nsetmean\ngetmean(m::Model)\ngetmean(variable::RandomVariable)\nsetuncertaintyset\nismeanfeasible\nfindcenteredmean\ngetflexibilityindex\ngetconfidencelevel\ngetactiveconstraints\nJuMP.getvalue(v::FlexibilityVariable)\nrankinequalities\nfindstochasticflexibility\nJuMP.linearindex(v::FlexibilityVariable)"
+    "text": "FlexibilityModel\n@randomvariable\n@recoursevariable\ngetflexibilitydata\nsetcovariance\ngetcovariance\nsetmean\ngetmean(m::Model)\ngetmean(variable::RandomVariable)\nsetuncertaintyset\nismeanfeasible\nfindcenteredmean\ngetflexibilityindex\ngetconfidencelevel\ngetsolutiontime\ngetactiveconstraints\nJuMP.getvalue(v::FlexibilityVariable)\nrankinequalities\nfindstochasticflexibility\nJuMP.linearindex(v::FlexibilityVariable)"
 },
 
 {
-    "location": "api.html#FlexJuMP.FlexibilityVariable",
+    "location": "api/#FlexJuMP.FlexibilityVariable",
     "page": "Library",
     "title": "FlexJuMP.FlexibilityVariable",
     "category": "type",
-    "text": "FlexibilityVariable <: JuMP.AbstractJuMPScalar\n\nAn abstract type to define new variable types.\n\n\n\n"
+    "text": "FlexibilityVariable <: JuMP.AbstractJuMPScalar\n\nAn abstract type to define new variable types.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.RandomVariable",
+    "location": "api/#FlexJuMP.RandomVariable",
     "page": "Library",
     "title": "FlexJuMP.RandomVariable",
     "category": "type",
-    "text": "RandomVariable <: FlexibilityVariable\n\nA DataType for random variables.\n\nFields\n\nm::Model Flexibility model.\nidx::Int Index of variable in model.\n\n\n\n"
+    "text": "RandomVariable <: FlexibilityVariable\n\nA DataType for random variables.\n\nFields\n\nm::Model Flexibility model.\nidx::Int Index of variable in model.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.RecourseVariable",
+    "location": "api/#FlexJuMP.RecourseVariable",
     "page": "Library",
     "title": "FlexJuMP.RecourseVariable",
     "category": "type",
-    "text": "RecourseVariable <: FlexibilityVariable\n\nA DataType for recourse variables.\n\nFields\n\nm::Model Flexibility model.\nidx::Int Index of variable in model.\n\n\n\n"
+    "text": "RecourseVariable <: FlexibilityVariable\n\nA DataType for recourse variables.\n\nFields\n\nm::Model Flexibility model.\nidx::Int Index of variable in model.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.FlexibilityExpr",
+    "location": "api/#FlexJuMP.FlexibilityExpr",
     "page": "Library",
     "title": "FlexJuMP.FlexibilityExpr",
     "category": "type",
-    "text": "FlexibilityExpr <: JuMP.GenericAffExpr\n\nA GenericAffExpr that contains random and/or recourse variables.\n\n\n\n"
+    "text": "FlexibilityExpr <: JuMP.GenericAffExpr\n\nA GenericAffExpr that contains random and/or recourse variables.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.FlexibilityConstraint",
+    "location": "api/#FlexJuMP.FlexibilityConstraint",
     "page": "Library",
     "title": "FlexJuMP.FlexibilityConstraint",
     "category": "type",
-    "text": "FlexibilityConstraint <: JuMP.AbstractConstraint\n\nA constraint that contains random and/or recourse variables.\n\nFields\n\nflex_expr::FlexibilityExpr Constraint expression.\nsense::Symbol The cosntraint sense symbol :(<=) or :(>=) or :(==).\n\n\n\n"
+    "text": "FlexibilityConstraint <: JuMP.AbstractConstraint\n\nA constraint that contains random and/or recourse variables.\n\nFields\n\nflex_expr::FlexibilityExpr Constraint expression.\nsense::Symbol The cosntraint sense symbol :(<=) or :(>=) or :(==).\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.AbstractUncertaintySet",
+    "location": "api/#FlexJuMP.AbstractUncertaintySet",
     "page": "Library",
     "title": "FlexJuMP.AbstractUncertaintySet",
     "category": "type",
-    "text": "AbstractUncertaintySet\n\nAn abstract type to define new uncertainty set types.\n\n\n\n"
+    "text": "AbstractUncertaintySet\n\nAn abstract type to define new uncertainty set types.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.EllipsoidalSet",
+    "location": "api/#FlexJuMP.EllipsoidalSet",
     "page": "Library",
     "title": "FlexJuMP.EllipsoidalSet",
     "category": "type",
-    "text": "EllipsoidalSet <: AbstractUncertaintySet\n\nAn ellipsoidal uncertainty set that will use the covariance matrix stored in FlexibilityData.\n\nFields\n\nname::Symbol Name of the set which will be :Ellipsoid.\nonly_positive::Bool An option to indicate if the set should be intersected with the set all positive numbers.\n\n\n\n"
+    "text": "EllipsoidalSet <: AbstractUncertaintySet\n\nAn ellipsoidal uncertainty set that will use the covariance matrix stored in FlexibilityData.\n\nFields\n\nname::Symbol Name of the set which will be :Ellipsoid.\nonly_positive::Bool An option to indicate if the set should be intersected with the set all positive numbers.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.HyperboxSet",
+    "location": "api/#FlexJuMP.HyperboxSet",
     "page": "Library",
     "title": "FlexJuMP.HyperboxSet",
     "category": "type",
-    "text": "HyperboxSet <: AbstractUncertaintySet\n\nA hyperbox uncertainty set whose nomimal dimensions are determined by neg_dev and pos_dev.\n\nFields\n\nname::Symbol Name of the set which will be :Hyperbox.\nneg_dev::Vector{Number} A vector of the expected negative deviation of the random variables.\npos_dev::Vector{Number} A vector of the expected positive deviation of the random variables.\nonly_positive::Bool An option to indicate if the set should be intersected with the set all positive numbers.\n\n\n\n"
+    "text": "HyperboxSet <: AbstractUncertaintySet\n\nA hyperbox uncertainty set whose nomimal dimensions are determined by neg_dev and pos_dev.\n\nFields\n\nname::Symbol Name of the set which will be :Hyperbox.\nneg_dev::Vector{Number} A vector of the expected negative deviation of the random variables.\npos_dev::Vector{Number} A vector of the expected positive deviation of the random variables.\nonly_positive::Bool An option to indicate if the set should be intersected with the set all positive numbers.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.PNormSet",
+    "location": "api/#FlexJuMP.PNormSet",
     "page": "Library",
     "title": "FlexJuMP.PNormSet",
     "category": "type",
-    "text": "PNormSet <: AbstractUncertaintySet\n\nA p-norm based uncertainty set based on a bounded p-norm.\n\nFields\n\nname::Symbol Name of the set which will be :PNorm.\np::Number The value of p which can be 1, 2, or Inf.\nonly_positive::Bool An option to indicate if the set should be intersected with the set all positive numbers.\n\n\n\n"
+    "text": "PNormSet <: AbstractUncertaintySet\n\nA p-norm based uncertainty set based on a bounded p-norm.\n\nFields\n\nname::Symbol Name of the set which will be :PNorm.\np::Number The value of p which can be 1, 2, or Inf.\nonly_positive::Bool An option to indicate if the set should be intersected with the set all positive numbers.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.FlexibilityData",
+    "location": "api/#FlexJuMP.FlexibilityData",
     "page": "Library",
     "title": "FlexJuMP.FlexibilityData",
     "category": "type",
-    "text": "FlexibilityData\n\nA DataType for storing the data necessary to manage the bookkeeping of the flexibility variables (RandomVariable and RecourseVariable), the uncertainty set, and solution results.\n\nFields\n\nflexibility_constraints::Vector{JuMP.AbstractConstraint} Constraints that involve flexibility variables.\nnumRVs::Int The number of RandomVariable that have been added to the model.\nRVmeans::Vector{Number} The means corresponding to each RandomVariable.\nRVnames::Vector{AbstractString} The symbolic name of each RandomVariable.\nRVcols::Vector{Int} The index of each RandomVariable.\nnum_recourse_vars::Int The number of RecourseVariable that have been added to the model.\nrecourse_names::Vector{AbstractString} The symbolic name of each RecourseVariable.\nrecourse_cols::Vector{Int} The index of each RecourseVariable.\nuncertainty_set::AbstractUncertaintySet The uncertainty set DataType with all of the set specfic attributes.\ncovariance::Matrix{Number} The covariance matrix.\nflexibility_index::Union{Void, Number} The flexibility index result obtained from solving the flexibility model.\nactive_constraints::Vector{Int} The indexes of the active inequality constraints at the solution of the flexibility model.\n\'solution_time::Number\' The solution time in seconds.\n\n\n\n"
+    "text": "FlexibilityData\n\nA DataType for storing the data necessary to manage the bookkeeping of the flexibility variables (RandomVariable and RecourseVariable), the uncertainty set, and solution results.\n\nFields\n\nflexibility_constraints::Vector{JuMP.AbstractConstraint} Constraints that involve flexibility variables.\nnumRVs::Int The number of RandomVariable that have been added to the model.\nRVmeans::Vector{Number} The means corresponding to each RandomVariable.\nRVnames::Vector{AbstractString} The symbolic name of each RandomVariable.\nRVcols::Vector{Int} The index of each RandomVariable.\nnum_recourse_vars::Int The number of RecourseVariable that have been added to the model.\nrecourse_names::Vector{AbstractString} The symbolic name of each RecourseVariable.\nrecourse_cols::Vector{Int} The index of each RecourseVariable.\nuncertainty_set::AbstractUncertaintySet The uncertainty set DataType with all of the set specfic attributes.\ncovariance::Matrix{Number} The covariance matrix.\nflexibility_index::Union{Nothing, Number} The flexibility index result obtained from solving the flexibility model.\nactive_constraints::Vector{Int} The indexes of the active inequality constraints at the solution of the flexibility model.\n\'solution_time::Number\' The solution time in seconds.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#DataTypes-1",
+    "location": "api/#DataTypes-1",
     "page": "Library",
     "title": "DataTypes",
     "category": "section",
@@ -561,95 +577,95 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api.html#FlexJuMP.getuncertaintyset",
+    "location": "api/#FlexJuMP.getuncertaintyset",
     "page": "Library",
     "title": "FlexJuMP.getuncertaintyset",
     "category": "function",
-    "text": "getuncertaintyset(m::Model)\n\nReturn the current uncertainty set datatype in the flexibility modelas stored in FlexibilityData.uncertaintyset.\n\nArguments\n\nm::Model The flexibility model.\n\n\n\n"
+    "text": "getuncertaintyset(m::Model)\n\nReturn the current uncertainty set datatype in the flexibility modelas stored in FlexibilityData.uncertaintyset.\n\nArguments\n\nm::Model The flexibility model.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.solvehook",
+    "location": "api/#FlexJuMP.solvehook",
     "page": "Library",
     "title": "FlexJuMP.solvehook",
     "category": "function",
-    "text": "solvehook(m::Model; [suppress_warnings::Bool = false, U::Number = 10000, diag::Bool = false, active_constr::Bool = false, real_recourse_dim::Int = -1, conic_δ::Bool = false, inactives::Vector = []])\n\nReturns the solution status to solving the flexibility model m. This solvehook what JuMP.solve(::Model) for flexibility models. This solves the flexibility index problem using the variables and constraints specified in m.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\nsuppress_warnings::Bool = false Indicates if solver warnings should be suppressed.\nU::Number = 10000 The slack variable upper bound.\ndiag::Bool = false Indicates if the ellipsoidal uncertainty set is diagonalized (this is only active when an ellipsoidal set is used).\nactive_constr::Bool = false Indicates if the optional active constraint should be used which enforces how many inequalities are active at the solution, this must be set to true for systems without control variables and/or contain state variables.\nreal_recourse_dim::Int = -1 The actual number of recourse variables in case state variables are included as recourse variables. This is mandatory if active_constr = true and no state variables are provided.\nconic_δ::Bool = false This should be set to true if a conic solver is used such as Pajarito.jl.\ninactives::Vector = [] The indexes of inequality constraints that should be turned off.\n\n\n\n"
+    "text": "solvehook(m::Model; [suppress_warnings::Bool = false, U::Number = 10000, diag::Bool = false, active_constr::Bool = false, real_recourse_dim::Int = -1, conic_δ::Bool = false, inactives::Vector = []])\n\nReturns the solution status to solving the flexibility model m. This solvehook what JuMP.solve(::Model) for flexibility models. This solves the flexibility index problem using the variables and constraints specified in m.\n\nArguments\n\nm::Model The flexibility model.\n\nKeyword Arguments\n\nsuppress_warnings::Bool = false Indicates if solver warnings should be suppressed.\nU::Number = 10000 The slack variable upper bound.\ndiag::Bool = false Indicates if the ellipsoidal uncertainty set is diagonalized (this is only active when an ellipsoidal set is used).\nactive_constr::Bool = false Indicates if the optional active constraint should be used which enforces how many inequalities are active at the solution, this must be set to true for systems without control variables and/or contain state variables.\nreal_recourse_dim::Int = -1 The actual number of recourse variables in case state variables are included as recourse variables. This is mandatory if active_constr = true and no state variables are provided.\nconic_δ::Bool = false This should be set to true if a conic solver is used such as Pajarito.jl.\ninactives::Vector = [] The indexes of inequality constraints that should be turned off.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.MakeInputDict",
+    "location": "api/#FlexJuMP.MakeInputDict",
     "page": "Library",
     "title": "FlexJuMP.MakeInputDict",
     "category": "function",
-    "text": "MakeInputDict(m::Model)\n\nReturns input_dict::Dict which contains the state space representation of the system equations stored in the flexibility model. The resulting input_dict is used by most of the flexibility analysis functions.\n\nArguments\n\nm::Model The flexibility model.\n\n\n\n"
+    "text": "MakeInputDict(m::Model)\n\nReturns input_dict::Dict which contains the state space representation of the system equations stored in the flexibility model. The resulting input_dict is used by most of the flexibility analysis functions.\n\nArguments\n\nm::Model The flexibility model.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.AddSystemExpressions",
+    "location": "api/#FlexJuMP.AddSystemExpressions",
     "page": "Library",
     "title": "FlexJuMP.AddSystemExpressions",
     "category": "function",
-    "text": "AddSystemExpressions(m::Model, input_dict::Dict, [num_scenarios::Int = 0])\n\nReturns a vector of vectors where the first contains all the inequality expressions corresponding to the inequalities defined in input_dict and the second contains all of the equality expressions corresponding to the equalities defined in input_dict.\n\nArguments\n\nm::Model The flexibility model.\ninput_dict::Dict Input dictionary as defined by MakeInputDict.\nnum_scenarios::Int = 0 The number of scenerio subproblems, 0 turns off this feature.\n\n\n\n"
+    "text": "AddSystemExpressions(m::Model, input_dict::Dict, [num_scenarios::Int = 0])\n\nReturns a vector of vectors where the first contains all the inequality expressions corresponding to the inequalities defined in input_dict and the second contains all of the equality expressions corresponding to the equalities defined in input_dict.\n\nArguments\n\nm::Model The flexibility model.\ninput_dict::Dict Input dictionary as defined by MakeInputDict.\nnum_scenarios::Int = 0 The number of scenerio subproblems, 0 turns off this feature.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.RandomVariable-Tuple{JuMP.Model,Number,AbstractString}",
+    "location": "api/#FlexJuMP.RandomVariable-Tuple{Model,Number,AbstractString}",
     "page": "Library",
     "title": "FlexJuMP.RandomVariable",
     "category": "method",
-    "text": "RandomVariable(m::Model, mean::Number, name::AbstractString)\n\nReturn a RandomVariable DataType for given flexibility model m given the mean and the name. An anonymous JuMP variable is added directly to the flexibility model and its is appended to FlexibilityData.RVcols.\n\nArguments\n\nm::Model The flexibility model.\nmean::Number The variable mean.\nname::AbstractString The variable name.\n\n\n\n"
+    "text": "RandomVariable(m::Model, mean::Number, name::AbstractString)\n\nReturn a RandomVariable DataType for given flexibility model m given the mean and the name. An anonymous JuMP variable is added directly to the flexibility model and its is appended to FlexibilityData.RVcols.\n\nArguments\n\nm::Model The flexibility model.\nmean::Number The variable mean.\nname::AbstractString The variable name.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.RecourseVariable-Tuple{JuMP.Model,AbstractString}",
+    "location": "api/#FlexJuMP.RecourseVariable-Tuple{Model,AbstractString}",
     "page": "Library",
     "title": "FlexJuMP.RecourseVariable",
     "category": "method",
-    "text": "RecourseVariable(m::Model, name::AbstractString)\n\nReturn a RecourseVariable DataType for given flexibility model m given the name. An anonymous JuMP variable is added directly to the flexibility model and its is appended to FlexibilityData.recourse_cols.\n\nArguments\n\nm::Model The flexibility model.\nname::AbstractString The variable name.\n\n\n\n"
+    "text": "RecourseVariable(m::Model, name::AbstractString)\n\nReturn a RecourseVariable DataType for given flexibility model m given the name. An anonymous JuMP variable is added directly to the flexibility model and its is appended to FlexibilityData.recourse_cols.\n\nArguments\n\nm::Model The flexibility model.\nname::AbstractString The variable name.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#Base.show-Tuple{IO,JuMP.GenericAffExpr{JuMP.GenericAffExpr{Float64,JuMP.Variable},Union{FlexJuMP.RandomVariable, FlexJuMP.RecourseVariable}}}",
+    "location": "api/#Base.show-Tuple{IO,JuMP.GenericAffExpr{JuMP.GenericAffExpr{Float64,Variable},Union{RandomVariable, RecourseVariable}}}",
     "page": "Library",
     "title": "Base.show",
     "category": "method",
-    "text": "Base.show(io::IO, a::FlexibilityExpr)\n\nExtend Base.show to print flexibility expressions.\n\n\n\n"
+    "text": "Base.show(io::IO, a::FlexibilityExpr)\n\nExtend Base.show to print flexibility expressions.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#JuMP.addconstraint-Tuple{JuMP.Model,FlexJuMP.FlexibilityConstraint}",
+    "location": "api/#JuMP.addconstraint-Tuple{Model,FlexJuMP.FlexibilityConstraint}",
     "page": "Library",
     "title": "JuMP.addconstraint",
     "category": "method",
-    "text": "JuMP.addconstraint(m::Model, constr::FlexibilityConstraint)\n\nExtend the JuMP.addconstraint function to handle FlexibilityConstraint types.\n\n\n\n"
+    "text": "JuMP.addconstraint(m::Model, constr::FlexibilityConstraint)\n\nExtend the JuMP.addconstraint function to handle FlexibilityConstraint types.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#Base.show-Tuple{IO,FlexJuMP.FlexibilityConstraint}",
+    "location": "api/#Base.show-Tuple{IO,FlexJuMP.FlexibilityConstraint}",
     "page": "Library",
     "title": "Base.show",
     "category": "method",
-    "text": "JuMP.show(io::IO,c::FlexibilityConstraint)\n\nExtend the JuMP.show function to handle FlexibilityConstraint types.\n\n\n\n"
+    "text": "JuMP.show(io::IO,c::FlexibilityConstraint)\n\nExtend the JuMP.show function to handle FlexibilityConstraint types.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#JuMP.constructconstraint!-Tuple{JuMP.GenericAffExpr{JuMP.GenericAffExpr{Float64,JuMP.Variable},Union{FlexJuMP.RandomVariable, FlexJuMP.RecourseVariable}},Symbol}",
+    "location": "api/#JuMP.constructconstraint!-Tuple{JuMP.GenericAffExpr{JuMP.GenericAffExpr{Float64,Variable},Union{RandomVariable, RecourseVariable}},Symbol}",
     "page": "Library",
     "title": "JuMP.constructconstraint!",
     "category": "method",
-    "text": "JuMP.constructconstraint!(flex_aff::FlexibilityExpr, sense::Symbol)\n\nExtends JuMP.constructconstraint! for FlexibilityExpr types.\n\n\n\n"
+    "text": "JuMP.constructconstraint!(flex_aff::FlexibilityExpr, sense::Symbol)\n\nExtends JuMP.constructconstraint! for FlexibilityExpr types.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#FlexJuMP.ComputeCenter",
+    "location": "api/#FlexJuMP.ComputeCenter",
     "page": "Library",
     "title": "FlexJuMP.ComputeCenter",
     "category": "function",
-    "text": "ComputeCenter(m::Model, center::Symbol, solver, toler::Number, only_positive::Bool)\n\nReturns a center point that can be used to replace the mean if desired.\n\nArguments\n\nm::Model The flexibility model.\ncenter::Symbol Indicates the type of center, accepted arguments are :feasible and :analytic.\nsolver The solver which must be an NLP solver for the analytic center.\ntoler::Number The tolerance to check solution validity.\nonly_positive::Bool Indicates if the center need by strictly positive.\n\n\n\n"
+    "text": "ComputeCenter(m::Model, center::Symbol, solver, toler::Number, only_positive::Bool)\n\nReturns a center point that can be used to replace the mean if desired.\n\nArguments\n\nm::Model The flexibility model.\ncenter::Symbol Indicates the type of center, accepted arguments are :feasible and :analytic.\nsolver The solver which must be an NLP solver for the analytic center.\ntoler::Number The tolerance to check solution validity.\nonly_positive::Bool Indicates if the center need by strictly positive.\n\n\n\n\n\n"
 },
 
 {
-    "location": "api.html#Internals-1",
+    "location": "api/#Internals-1",
     "page": "Library",
     "title": "Internals",
     "category": "section",
@@ -657,7 +673,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api.html#Index-1",
+    "location": "api/#Index-1",
     "page": "Library",
     "title": "Index",
     "category": "section",
