@@ -238,7 +238,7 @@ function solvehook(m::Model; suppress_warnings::Bool = false, U::Number = 10000,
         end
 
         # Parse the active active constraints
-        active_inds = findall(abs.(getvalue(y) - 1) .<= 1e-4)
+        active_inds = findall(abs.(getvalue(y) - ones(n_f)) .<= 1e-4)
         flex_data.active_constraints = inequal_inds[active_inds]
 
         # Save the flexibility index

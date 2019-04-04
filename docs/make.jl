@@ -1,8 +1,9 @@
 using Documenter, FlexJuMP
 
 makedocs(modules = [FlexJuMP],
-         format = :html,
-         sitename = "FlexJuMP.jl",
+         doctest=true,html_prettyurls = get(ENV, "CI", nothing) == "true"
+         sitename = "FlexJuMP.jl - A Framework for Flexibility Analysis",
+         authors = "Joshua Pulsipher",
          pages = ["Home" => "index.md",
                   "Background" => "background.md",
                   "User Guide" => "guide.md",
@@ -10,9 +11,5 @@ makedocs(modules = [FlexJuMP],
                   "Library" => "api.md"])
 
  deploydocs(
-     repo   = "github.com/pulsipher/FlexJuMP.jl.git",
-     target = "build",
-     julia  = "0.6",
-     deps   = nothing,
-     make   = nothing
+     repo   = "github.com/pulsipher/FlexJuMP.jl.git"
  )

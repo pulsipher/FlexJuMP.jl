@@ -27,6 +27,7 @@ ismeanfeasible
 findcenteredmean
 getflexibilityindex
 getconfidencelevel
+getsolutiontime
 getactiveconstraints
 JuMP.getvalue(v::FlexibilityVariable)
 rankinequalities

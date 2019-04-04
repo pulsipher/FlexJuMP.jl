@@ -30,10 +30,11 @@ FlexJuMP.jl is not yet a registered Julia package, but can still be installed by
 with the url of the repository instead of the name.
 
 ```julia
-Pkg.clone("git://github.com/pulsipher/FlexJuMP.jl.git")
+using Pkg
+Pkg.add("git://github.com/pulsipher/FlexJuMP.jl.git")
 ```
-Also, FlexJuMP.jl only supports Julia 0.6, but soon will be compatible with Julia 0.7 and
-Julia 1.0.
+The latest version of FlexJuMP.jl now only supports Julia 0.7 and above. A version is still available for use
+with Julia 0.6 under the julia-0.6 branch.
 
 ## Quick Start
 Below is a brief example of the high-level API, more explanation and examples are provided in [User Guide](@ref) and [Examples](@ref).

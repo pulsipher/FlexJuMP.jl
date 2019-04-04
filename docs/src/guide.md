@@ -371,6 +371,19 @@ data = getflexibilitydata(m)
 FlexJuMP.FlexibilityData(JuMP.AbstractConstraint[-0.67*Qc + 2*T[2] + x - 100 <= 0, -1*T[2] + -x - 250 == 0, 0.5*Qc + -0.75*T[1] + -1*T[2] + -1*T[3] + 1388.5 <= 0, -1*Qc + 1.5*T[1] + 2*T[2] + 1*T[3] + -2044 >= 0, 1*Qc + -1.5*T[1] + -2*T[2] + -1*T[3] + -2*T[4] + 2830 <= 0, -1*Qc + 1.5*T[1] + 2*T[2] + 1*T[3] + 3*T[4] + -3153 <= 0], 4, Number[620, 388, 583, 313], AbstractString["T[1]", "T[2]", "T[3]", "T[4]"], [1, 2, 3, 4], 1, AbstractString["Qc"], [5], FlexJuMP.EllipsoidalSet(:Ellipsoid, false), Number[11.11 0.0 0.0 0.0; 0.0 11.11 0.0 0.0; 0.0 0.0 11.11 0.0; 0.0 0.0 0.0 11.11], 3.600355086286672, [3, 6])
 ```
 
+### Solution Time Extraction
+The optimal solution time stored in `m` can be extracted using the
+[`getsolutiontime`](@ref) method. This is extracted from the if it is supported,
+otherwise it is determined using the `@elapsed` macro. With the current example we
+have:
+
+```julia
+opt_time = getsolutiontime(m)
+```
+```julia
+0.0034827596723466
+```
+
 ## Analysis Methods
 
 ### Ranking Limiting Constraints
