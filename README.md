@@ -1,6 +1,7 @@
 # FlexJuMP.jl
 
 A JuMP extension for analyzing and quantifying the flexibility of complex systems.
+Please note that support for FlexJuMP is discontinued in favor of [FlexibilityAnalysis.jl](https://github.com/pulsipher/FlexibilityAnalysis.jl) which is the supported registered package that replaces FlexJuMP.
 
 | **Documentation**                                                               | **Build Status**                                                                                |
 |:-------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
